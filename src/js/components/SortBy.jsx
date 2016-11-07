@@ -4,7 +4,7 @@ import {
   NavDropdown,
 } from 'react-bootstrap';
 
-function SortBy({ changeSortBy }){
+function SortBy({ changeSortBy }) {
   return (
     <NavDropdown eventKey={3} title="Sort By" id="basic-nav-dropdown">
       <MenuItem
@@ -22,5 +22,9 @@ function SortBy({ changeSortBy }){
     </NavDropdown>
   );
 }
+
+SortBy.propTypes = {
+  changeSortBy: React.PropTypes.func,
+};
 
 export default SortBy;

@@ -1,10 +1,10 @@
 import React from 'react';
 
-function ProfileGridView({ handleClick, philosopher }) {
+function ProfileGridView({ philosopher, handleClick }) {
   return (
     <div
       onClick={handleClick}
-        style={{
+      style={{
         alignItems: 'center',
         backgroundColor: '#111',
         backgroundImage: `url("imgs/${philosopher.img}")`,
@@ -40,5 +40,10 @@ function ProfileGridView({ handleClick, philosopher }) {
     </div>
   );
 }
+
+ProfileGridView.propTypes = {
+  handleClick: React.PropTypes.func,
+  philosopher: React.PropTypes.object,
+};
 
 export default ProfileGridView;

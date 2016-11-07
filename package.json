@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.dev.js",
+    "lint": "eslint --ext .js,.jsx src/js/* src/js/components/* src/js/selectors/*; exit 0",
     "start": "webpack-dev-server --content-base dest/",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --config webpack.config.dev.js --watch"
@@ -14,9 +15,15 @@
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
+    "babel-eslint": "^7.1.0",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
+    "eslint": "^3.9.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^2.1.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.6.0",
     "html-webpack-plugin": "^2.24.1",
     "webpack": "^1.13.3"
   },

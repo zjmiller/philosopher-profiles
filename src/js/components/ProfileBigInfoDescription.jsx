@@ -19,4 +19,8 @@ function ProfileBigInfoDescription({ philosopher }) {
   );
 }
 
+ProfileBigInfoDescription.propTypes = {
+  philosopher: React.PropTypes.object,
+};
+
 export default ProfileBigInfoDescription;

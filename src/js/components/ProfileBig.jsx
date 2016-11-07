@@ -18,4 +18,9 @@ function ProfileBig({ leaveProfile, philosopher }) {
   );
 }
 
+ProfileBig.propTypes = {
+  leaveProfile: React.PropTypes.func,
+  philosopher: React.PropTypes.object,
+};
+
 export default ProfileBig;

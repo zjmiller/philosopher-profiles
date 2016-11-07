@@ -1,6 +1,6 @@
 import React from 'react';
 
-function PhilosopherTimeAlive({ philosopher }){
+function PhilosopherTimeAlive({ philosopher }) {
   return (
     <span>
       {philosopher.birth.year}
@@ -15,5 +15,9 @@ function PhilosopherTimeAlive({ philosopher }){
     </span>
   );
 }
+
+PhilosopherTimeAlive.propTypes = {
+  philosopher: React.PropTypes.object,
+};
 
 export default PhilosopherTimeAlive;

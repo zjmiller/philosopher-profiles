@@ -6,13 +6,14 @@ import {
 } from 'react-bootstrap';
 import ProfileListView from './ProfileListView';
 
-function ProfilesListView({ data, viewProfile }) {
+function ProfilesListView({ philosophers, viewProfile }) {
   return (
     <Grid>
       <Row>
-        {data.map((philosopher, i) =>
-          <Col key={i} lg={12} md={12} sm={12} xs={12}
-            style={{padding: '5px'}}
+        {philosophers.map((philosopher, i) =>
+          <Col
+            key={i} lg={12} md={12} sm={12} xs={12}
+            style={{ padding: '5px' }}
           >
             <ProfileListView
               handleClick={() => viewProfile(philosopher.id)}
@@ -24,5 +25,10 @@ function ProfilesListView({ data, viewProfile }) {
     </Grid>
   );
 }
+
+ProfilesListView.propTypes = {
+  philosophers: React.PropTypes.array,
+  viewProfile: React.PropTypes.func,
+};
 
 export default ProfilesListView;

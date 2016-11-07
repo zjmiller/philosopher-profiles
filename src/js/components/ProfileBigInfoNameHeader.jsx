@@ -2,7 +2,7 @@ import React from 'react';
 import PhilosopherFullName from './PhilosopherFullName';
 import PhilosopherTimeAlive from './PhilosopherTimeAlive';
 
-function ProfileBigInfoNameHeader({ philosopher }){
+function ProfileBigInfoNameHeader({ philosopher }) {
   return (
     <h2 style={{ marginTop: '1px' }}>
       <PhilosopherFullName philosopher={philosopher} />
@@ -13,5 +13,9 @@ function ProfileBigInfoNameHeader({ philosopher }){
     </h2>
   );
 }
+
+ProfileBigInfoNameHeader.propTypes = {
+  philosopher: React.PropTypes.object,
+};
 
 export default ProfileBigInfoNameHeader;

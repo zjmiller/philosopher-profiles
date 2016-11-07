@@ -6,13 +6,13 @@ import {
 } from 'react-bootstrap';
 import ProfileGridView from './ProfileGridView';
 
-function ProfilesGridView({ data, viewProfile }) {
+function ProfilesGridView({ philosophers, viewProfile }) {
   return (
     <Grid>
       <Row>
-        {data.map((philosopher, i) =>
+        {philosophers.map((philosopher, i) =>
           <Col
-            style={{padding: '5px'}}
+            style={{ padding: '5px' }}
             key={i}
             lg={2}
             md={3}
@@ -29,5 +29,10 @@ function ProfilesGridView({ data, viewProfile }) {
     </Grid>
   );
 }
+
+ProfilesGridView.propTypes = {
+  philosophers: React.PropTypes.array,
+  viewProfile: React.PropTypes.func,
+};
 
 export default ProfilesGridView;

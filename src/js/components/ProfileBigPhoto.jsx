@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Col } from 'react-bootstrap';
 
-function ProfileBigPhoto({ philosopher }){
+function ProfileBigPhoto({ philosopher }) {
   return (
     <Col
       lg={2} lgOffset={0}
@@ -18,5 +18,9 @@ function ProfileBigPhoto({ philosopher }){
     />
   );
 }
+
+ProfileBigPhoto.propTypes = {
+  philosopher: React.PropTypes.object,
+};
 
 export default ProfileBigPhoto;

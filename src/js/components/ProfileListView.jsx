@@ -50,4 +50,9 @@ function ProfileListView({ handleClick, philosopher }) {
   );
 }
 
+ProfileListView.propTypes = {
+  handleClick: React.PropTypes.func,
+  philosopher: React.PropTypes.object,
+};
+
 export default ProfileListView;

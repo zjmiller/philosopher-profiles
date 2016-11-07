@@ -12,13 +12,16 @@ function Header({
   enableGridView,
   enableListView,
   interests,
-  view
+  view,
 }) {
   return (
     <div>
-      <Navbar collapseOnSelect style={{
-        borderRadius: 0,
-      }}>
+      <Navbar
+        collapseOnSelect
+        style={{
+          borderRadius: 0,
+        }}
+      >
         <Navbar.Header>
           <SiteBrand />
           <Navbar.Toggle />
@@ -35,5 +38,14 @@ function Header({
     </div>
   );
 }
+
+Header.propTypes = {
+  changeFilterBy: React.PropTypes.func,
+  changeSortBy: React.PropTypes.func,
+  enableGridView: React.PropTypes.func,
+  enableListView: React.PropTypes.func,
+  interests: React.PropTypes.array,
+  view: React.PropTypes.string,
+};
 
 export default Header;

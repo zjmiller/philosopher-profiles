@@ -20,4 +20,8 @@ function ProfileBigInfoInstitutions({ philosopher }) {
   );
 }
 
+ProfileBigInfoInstitutions.propTypes = {
+  philosopher: React.PropTypes.object,
+};
+
 export default ProfileBigInfoInstitutions;

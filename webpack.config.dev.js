@@ -4,11 +4,15 @@ const path = require('path');
 module.exports = {
   devtool: 'source-map',
 
-  entry: './src/js/index.js',
+  entry: './src/js/index.jsx',
 
   output: {
     path: path.resolve(__dirname, 'dest'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+  },
+
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
   },
 
   module: {
@@ -16,14 +20,14 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: 'babel'
-      }
+        loader: 'babel',
+      },
     ],
   },
 
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src', 'public', 'index.html'),
-    })
+    }),
   ],
-}
+};

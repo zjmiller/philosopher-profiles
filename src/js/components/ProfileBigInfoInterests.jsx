@@ -13,4 +13,8 @@ function ProfileBigInfoInterests({ philosopher }) {
   );
 }
 
+ProfileBigInfoInterests.propTypes = {
+  philosopher: React.PropTypes.object,
+};
+
 export default ProfileBigInfoInterests;

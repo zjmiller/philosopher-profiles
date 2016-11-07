@@ -18,4 +18,8 @@ function ProfileBigInfoDegree({ philosopher }) {
   );
 }
 
+ProfileBigInfoDegree.propTypes = {
+  philosopher: React.PropTypes.shape({}),
+};
+
 export default ProfileBigInfoDegree;
