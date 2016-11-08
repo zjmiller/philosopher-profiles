@@ -1,11 +1,13 @@
 import React from 'react';
 import ProfileBigInfoDescriptionText from './ProfileBigInfoDescriptionText';
+import getDescriptionOfPhilosopher from '../selectors/getDescriptionOfPhilosopher';
 
 function ProfileBigInfoDescription({ philosopher }) {
   return (
     <div>
       <span
         style={{
+          fontFamily: 'Helvetica',
           fontSize: '20px',
           fontWeight: 700,
         }}
@@ -13,7 +15,9 @@ function ProfileBigInfoDescription({ philosopher }) {
         Description
       </span>
       <div style={{ marginLeft: '10px' }}>
-        <ProfileBigInfoDescriptionText text={philosopher.description} />
+        <ProfileBigInfoDescriptionText
+          text={getDescriptionOfPhilosopher(philosopher)}
+        />
       </div>
     </div>
   );

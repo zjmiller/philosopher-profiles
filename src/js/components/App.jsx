@@ -4,6 +4,7 @@ import Profiles from './Profiles';
 import ProfileBig from './ProfileBig';
 import getInterests from '../selectors/getInterests';
 import getPhilosophers from '../selectors/getPhilosophers';
+import getPhilosopherById from '../selectors/getPhilosopherById';
 import filterPhilosophers from '../selectors/filterPhilosophers';
 import sortPhilosophers from '../selectors/sortPhilosophers';
 
@@ -21,6 +22,10 @@ class App extends Component {
     };
 
     this.state = initialState;
+  }
+
+  getChildContext() {
+    return { state: this.props.data };
   }
 
   enableListView = () => {
@@ -80,10 +85,11 @@ class App extends Component {
           ?
             <ProfileBig
               leaveProfile={this.leaveProfile}
-              philosopher={philosophers[this.state.profile]}
+              philosopher={getPhilosopherById(philosophers, this.state.profile)}
             />
           :
           <Profiles
+            filterBy={this.state.filterBy}
             philosophers={filteredAndSortedPhilosophers}
             view={this.state.view}
             viewProfile={this.viewProfile}
@@ -94,6 +100,10 @@ class App extends Component {
   }
 }
 
-App.propTypes = { data: React.PropTypes.shape({}) };
+App.childContextTypes = {
+  state: React.PropTypes.object,
+};
+
+App.propTypes = { data: React.PropTypes.object };
 
 export default App;

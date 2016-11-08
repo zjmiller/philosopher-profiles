@@ -1,4 +1,5 @@
 import React from 'react';
+import PhilosopherFullName from './PhilosopherFullName';
 
 function ProfileGridView({ philosopher, handleClick }) {
   return (
@@ -33,9 +34,7 @@ function ProfileGridView({ philosopher, handleClick }) {
           width: '80%',
         }}
       >
-        {philosopher.name.first}
-        {philosopher.name.first ? ' ' : ''}
-        {philosopher.name.last}
+        <PhilosopherFullName philosopher={philosopher} />
       </div>
     </div>
   );

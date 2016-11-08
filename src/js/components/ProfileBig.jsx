@@ -8,7 +8,9 @@ function ProfileBig({ leaveProfile, philosopher }) {
   return (
     <Grid>
       <Row style={{ marginBottom: '15px' }}>
-        <ProfileBigBackBtn leaveProfile={leaveProfile} />
+        <div style={{ marginLeft: '5px' }}>
+          <ProfileBigBackBtn leaveProfile={leaveProfile} />
+        </div>
       </Row>
       <Row>
         <ProfileBigPhoto philosopher={philosopher} />

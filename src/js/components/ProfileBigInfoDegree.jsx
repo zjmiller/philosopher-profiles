@@ -1,10 +1,12 @@
 import React from 'react';
+import getDegreeOfPhilosopher from '../selectors/getDegreeOfPhilosopher';
 
 function ProfileBigInfoDegree({ philosopher }) {
   return (
     <div>
       <span
         style={{
+          fontFamily: 'Helvetica',
           fontSize: '20px',
           fontWeight: 700,
         }}
@@ -12,7 +14,7 @@ function ProfileBigInfoDegree({ philosopher }) {
         Degree
       </span>
       <ul>
-        <li>{philosopher.degree}</li>
+        <li>{getDegreeOfPhilosopher(philosopher)}</li>
       </ul>
     </div>
   );

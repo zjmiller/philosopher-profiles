@@ -1,19 +1,22 @@
 import React from 'react';
+import getIdeasOfPhilosopher from '../selectors/getIdeasOfPhilosopher';
+import getNameOfIdea from '../selectors/getNameOfIdea';
 
 function ProfileBigInfoIdeas({ philosopher }) {
   return (
     <div>
       <span
         style={{
+          fontFamily: 'Helvetica',
           fontSize: '20px',
           fontWeight: 700,
         }}
       >
-        Idea
+        Ideas
       </span>
       <ul>
-        {philosopher.ideas.map((idea, i) =>
-          <li key={i}>{idea}</li>
+        {getIdeasOfPhilosopher(philosopher).map((idea, i) =>
+          <li key={i}>{getNameOfIdea(idea)}</li>
         )}
       </ul>
     </div>

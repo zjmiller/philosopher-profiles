@@ -1,10 +1,13 @@
 import React from 'react';
+import getInstitutionsOfPhilosopher from '../selectors/getInstitutionsOfPhilosopher';
+import getNameOfInstitution from '../selectors/getNameOfInstitution';
 
 function ProfileBigInfoInstitutions({ philosopher }) {
   return (
     <div>
       <span
         style={{
+          fontFamily: 'Helvetica',
           fontSize: '20px',
           fontWeight: 700,
         }}
@@ -12,8 +15,8 @@ function ProfileBigInfoInstitutions({ philosopher }) {
         Institutions
       </span>
       <ul>
-        {philosopher.institutions.map((institution, i) =>
-          <li key={i}>{institution}</li>
+        {getInstitutionsOfPhilosopher(philosopher).map((institution, i) =>
+          <li key={i}>{getNameOfInstitution(institution)}</li>
         )}
       </ul>
     </div>

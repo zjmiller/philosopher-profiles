@@ -1,16 +1,20 @@
 import React from 'react';
+import getBirthYearOfPhilosopher from '../selectors/getBirthYearOfPhilosopher';
+import getBirthEraOfPhilosopher from '../selectors/getBirthEraOfPhilosopher';
+import getDeathYearOfPhilosopher from '../selectors/getDeathYearOfPhilosopher';
+import getDeathEraOfPhilosopher from '../selectors/getDeathEraOfPhilosopher';
 
 function PhilosopherTimeAlive({ philosopher }) {
   return (
     <span>
-      {philosopher.birth.year}
+      {getBirthYearOfPhilosopher(philosopher)}
       <span style={{ fontVariant: 'small-caps', marginLeft: '2px' }} >
-        {philosopher.birth.era.toLowerCase()}
+        {getBirthEraOfPhilosopher(philosopher).toLowerCase()}
       </span>
       {' '}–{' '}
-      {philosopher.death.year}
+      {getDeathYearOfPhilosopher(philosopher)}
       <span style={{ fontVariant: 'small-caps', marginLeft: '2px' }} >
-        {philosopher.death.era.toLowerCase()}
+        {getDeathEraOfPhilosopher(philosopher).toLowerCase()}
       </span>
     </span>
   );

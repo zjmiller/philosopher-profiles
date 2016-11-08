@@ -14,6 +14,7 @@ function ProfileBigPhoto({ philosopher }) {
         backgroundSize: 'cover',
         border: '5px solid #222',
         height: '300px',
+        marginBottom: '20px',
       }}
     />
   );

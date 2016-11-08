@@ -5,6 +5,8 @@ import {
   FormGroup,
   NavDropdown,
 } from 'react-bootstrap';
+import getIdOfInterest from '../selectors/getIdOfInterest';
+import getNameOfInterest from '../selectors/getNameOfInterest';
 
 class FilterBy extends Component {
   constructor(props) {
@@ -43,10 +45,10 @@ class FilterBy extends Component {
     const interestCheckboxes = interests.map((interest, i) =>
       <Checkbox
         key={i}
-        onChange={() => this.handleChange('interests', interest.id)}
-        checked={this.state.interests.indexOf(interest.id) > -1}
+        onChange={() => this.handleChange('interests', getIdOfInterest(interest))}
+        checked={this.state.interests.indexOf(getIdOfInterest(interest)) > -1}
       >
-        {interest.name}
+        {getNameOfInterest(interest)}
       </Checkbox>
     );
 

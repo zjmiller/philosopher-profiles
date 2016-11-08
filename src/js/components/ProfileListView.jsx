@@ -1,4 +1,6 @@
 import React from 'react';
+import PhilosopherFullName from './PhilosopherFullName';
+import PhilosopherTimeAlive from './PhilosopherTimeAlive';
 
 function ProfileListView({ handleClick, philosopher }) {
   return (
@@ -14,9 +16,7 @@ function ProfileListView({ handleClick, philosopher }) {
           fontWeight: 700,
         }}
       >
-        {philosopher.name.first}
-        {philosopher.name.first ? ' ' : ''}
-        {philosopher.name.last}
+        <PhilosopherFullName philosopher={philosopher} />
       </span>
       <br />
       <span
@@ -26,25 +26,7 @@ function ProfileListView({ handleClick, philosopher }) {
         }}
       >
         {' '}
-        {philosopher.birth.year}
-        <span
-          style={{
-            fontVariant: 'small-caps',
-            marginLeft: '2px',
-          }}
-        >
-          {philosopher.birth.era.toLowerCase()}
-        </span>
-        {' '}–{' '}
-        {philosopher.death.year}
-        <span
-          style={{
-            fontVariant: 'small-caps',
-            marginLeft: '2px',
-          }}
-        >
-          {philosopher.death.era.toLowerCase()}
-        </span>
+        <PhilosopherTimeAlive philosopher={philosopher} />
       </span>
     </div>
   );
