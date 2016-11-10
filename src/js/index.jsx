@@ -4,6 +4,7 @@ import 'whatwg-fetch';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
+import type { Interest, Philosopher, Store } from './flow-type-aliases/main';
 
 const flatten = require('lodash/flatten');
 const uniq = require('lodash/uniq');
@@ -18,20 +19,20 @@ fetch('./data.yaml')
     );
 
     const arrOfArrOfInterestNames =
-      philosophers.map(philosopher => philosopher.interests);
-    const arrOfInterestNames = flatten(arrOfArrOfInterestNames);
-    const arrOfUniqInterestNames = uniq(arrOfInterestNames);
+      philosophers.map((philosopher): string[] => philosopher.interests);
+    const arrOfInterestNames: string[] = flatten(arrOfArrOfInterestNames);
+    const arrOfUniqInterestNames: string[] = uniq(arrOfInterestNames);
 
-    const interests = arrOfUniqInterestNames.map((interestName, i) =>
+    const interests: Interest[] = arrOfUniqInterestNames.map((interestName, i) =>
       ({ id: i, name: interestName }));
 
-    philosophers.forEach((philosopher) => {
+    philosophers.forEach((philosopher): Philosopher => {
       philosopher.interests = philosopher.interests.map(interestName =>
          interests.find(interest => interest.name === interestName).id
       );
     });
 
-    const data = { interests, philosophers };
+    const data: Store = { interests, philosophers };
 
     ReactDOM.render(
       <App data={data} interests={data.interests} />,

@@ -1,3 +1,5 @@
+/* @flow */
+
 import React, { Component } from 'react';
 import Header from './Header';
 import Profiles from './Profiles';
@@ -8,8 +10,12 @@ import getPhilosopherById from '../selectors/getPhilosopherById';
 import filterPhilosophers from '../selectors/filterPhilosophers';
 import sortPhilosophers from '../selectors/sortPhilosophers';
 
+import type { Interest, Philosopher, Store } from '../flow-type-aliases/main';
+
 class App extends Component {
-  constructor(props) {
+  state: Object;
+
+  constructor(props: Object) {
     super(props);
     const initialState = {
       view: 'LIST',
@@ -42,7 +48,7 @@ class App extends Component {
     });
   }
 
-  viewProfile = (id) => {
+  viewProfile = (id: number) => {
     this.setState({ profile: id });
   }
 
@@ -50,24 +56,24 @@ class App extends Component {
     this.setState({ profile: undefined });
   }
 
-  changeFilterBy = (filterBy) => {
+  changeFilterBy = (filterBy: Object) => {
     this.setState({ filterBy });
   }
 
-  changeSortBy = (newSortBy) => {
+  changeSortBy = (newSortBy: boolean) => {
     this.setState({ sortBy: newSortBy });
   }
 
   render() {
-    const interests = getInterests(this.props.data);
-    const philosophers = getPhilosophers(this.props.data);
+    const interests: Interest[] = getInterests(this.props.data);
+    const philosophers: Philosopher[] = getPhilosophers(this.props.data);
     const sortOpts = { sortBy: this.state.sortBy };
-    const sortedPhilosophers = sortPhilosophers(philosophers, sortOpts);
+    const sortedPhilosophers: Philosopher[] = sortPhilosophers(philosophers, sortOpts);
     const filterOpts = {
       gender: this.state.filterBy.gender,
       interests: this.state.filterBy.interests,
     };
-    const filteredAndSortedPhilosophers =
+    const filteredAndSortedPhilosophers: Philosopher[] =
       filterPhilosophers(sortedPhilosophers, filterOpts);
 
     return (

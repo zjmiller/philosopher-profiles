@@ -1,14 +1,17 @@
+/* @flow */
+
 import React from 'react';
 import getInterestById from '../selectors/getInterestById';
 import getNameOfInterest from '../selectors/getNameOfInterest';
+import type { Interest } from '../flow-type-aliases/main';
 
-function FilteringMsg({ filterBy }, { state }) {
+function FilteringMsg({ filterBy }: { filterBy: Object }, { state }: { state: Object }) {
   return (
     <div
       style={{
         color: '#999',
         marginBottom: '20px',
-        textAlign: 'center',
+        marginLeft: '20px',
       }}
     >
       Filtering by{' '}
@@ -36,8 +39,8 @@ function FilteringMsg({ filterBy }, { state }) {
           <span>Interests{' '}
             <span style={{ color: '#955' }}>
             ({filterBy.interests
-              .map(id => getInterestById(state, id))
-              .map(interest => getNameOfInterest(interest))
+              .map((id: number): Interest => getInterestById(state, id))
+              .map((interest: Interest): string => getNameOfInterest(interest))
               .join(', ')})
             </span>
           </span>
