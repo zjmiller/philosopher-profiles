@@ -3,8 +3,12 @@
 import 'whatwg-fetch';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import App from './components/App';
-import type { Interest, Philosopher, Store } from './flow-type-aliases/main';
+import rootReducer from './reducers/rootReducer';
+
+import type { Interest, Philosopher } from './flow-type-aliases/main';
 
 const flatten = require('lodash/flatten');
 const uniq = require('lodash/uniq');
@@ -32,10 +36,20 @@ fetch('./data.yaml')
       );
     });
 
-    const data: Store = { interests, philosophers };
+    const preloadedState = {
+      interests,
+      philosophers,
+      view: 'GRID',
+    };
+
+    const store = createStore(rootReducer, preloadedState);
+
+    store.subscribe(() => console.log(store.getState()));
 
     ReactDOM.render(
-      <App data={data} interests={data.interests} />,
+      <Provider store={store}>
+        <App />
+      </Provider>,
       document.getElementById('root')
     );
   });

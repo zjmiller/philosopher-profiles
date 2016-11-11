@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import {
   Glyphicon,
   NavItem,
@@ -27,4 +28,13 @@ ListViewBtn.propTypes = {
   view: React.PropTypes.string,
 };
 
-export default ListViewBtn;
+const mapStateToProps = () => ({});
+
+const mapDispatchToProps = dispatch => ({
+  enableListView: () => dispatch({
+    type: 'CHANGE_VIEW',
+    view: 'LIST',
+  }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListViewBtn);

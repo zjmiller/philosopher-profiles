@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import {
   MenuItem,
   NavDropdown,
@@ -27,4 +28,13 @@ SortBy.propTypes = {
   changeSortBy: React.PropTypes.func,
 };
 
-export default SortBy;
+const mapStateToProps = () => ({});
+
+const mapDispatchToProps = dispatch => ({
+  changeSortBy: (newSortBy) => dispatch({
+    type: 'CHANGE_SORT_BY',
+    newSortBy,
+  }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SortBy);

@@ -1,43 +1,35 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import {
   Checkbox,
   ControlLabel,
   FormGroup,
   NavDropdown,
 } from 'react-bootstrap';
+
+import getGenderFilterInfo from '../selectors/getGenderFilterInfo';
+import getInterestsFilterInfo from '../selectors/getInterestsFilterInfo';
 import getIdOfInterest from '../selectors/getIdOfInterest';
 import getNameOfInterest from '../selectors/getNameOfInterest';
 
 class FilterBy extends Component {
-  constructor(props) {
-    super(props);
 
-    const initialState = {
-      gender: [],
-      interests: [],
-    };
-
-    this.state = initialState;
-  }
-
-  handleChange = (type, id) => {
-    let newType;
-    if (id === 'all') {
-      newType = [];
-    } else if (this.state[type].indexOf(id) > -1) {
-      newType = this.state[type].filter(i => i !== id);
-    } else {
-      newType = this.state[type].concat(id);
+  handleChange = (category, filter) => {
+    if (filter === 'all') {
+      this.props.toggleAllOnFilter(category);
+    } else if (category === 'interests') {
+      if (this.props.interestsFilterInfo.indexOf(filter) > -1) {
+        this.props.removeFilter(category, filter);
+      } else {
+        this.props.addFilter(category, filter);
+      }
+    } else if (category === 'gender') {
+      if (this.props.genderFilterInfo.indexOf(filter) > -1) {
+        this.props.removeFilter(category, filter);
+      } else {
+        this.props.addFilter(category, filter);
+      }
     }
-
-    const newState = Object.assign(
-      {},
-      this.state,
-      { [type]: newType }
-    );
-
-    this.props.changeFilterBy(newState);
-    this.setState(newState);
   }
 
   render() {
@@ -46,7 +38,7 @@ class FilterBy extends Component {
       <Checkbox
         key={i}
         onChange={() => this.handleChange('interests', getIdOfInterest(interest))}
-        checked={this.state.interests.indexOf(getIdOfInterest(interest)) > -1}
+        checked={this.props.interestsFilterInfo.indexOf(getIdOfInterest(interest)) > -1}
       >
         {getNameOfInterest(interest)}
       </Checkbox>
@@ -56,7 +48,7 @@ class FilterBy extends Component {
       <Checkbox
         key={'all'}
         onChange={() => this.handleChange('interests', 'all')}
-        checked={this.state.interests.length === 0}
+        checked={this.props.interestsFilterInfo.length === 0}
       >
         All
       </Checkbox>
@@ -74,21 +66,21 @@ class FilterBy extends Component {
             <Checkbox
               key={'allGender'}
               onChange={() => this.handleChange('gender', 'all')}
-              checked={this.state.gender.length === 0}
+              checked={this.props.genderFilterInfo.length === 0}
             >
               All
             </Checkbox>
             <Checkbox
               key={'female'}
               onChange={() => this.handleChange('gender', 'Female')}
-              checked={this.state.gender.indexOf('Female') > -1}
+              checked={this.props.genderFilterInfo.indexOf('Female') > -1}
             >
               Female
             </Checkbox>
             <Checkbox
               key={'male'}
               onChange={() => this.handleChange('gender', 'Male')}
-              checked={this.state.gender.indexOf('Male') > -1}
+              checked={this.props.genderFilterInfo.indexOf('Male') > -1}
             >
               Male
             </Checkbox>
@@ -100,8 +92,36 @@ class FilterBy extends Component {
 }
 
 FilterBy.propTypes = {
-  changeFilterBy: React.PropTypes.func,
+  addFilter: React.PropTypes.func,
+  genderFilterInfo: React.PropTypes.array,
   interests: React.PropTypes.array,
+  interestsFilterInfo: React.PropTypes.array,
+  removeFilter: React.PropTypes.func,
+  toggleAllOnFilter: React.PropTypes.func,
 };
 
-export default FilterBy;
+const mapStateToProps = state => ({
+  genderFilterInfo: getGenderFilterInfo(state),
+  interestsFilterInfo: getInterestsFilterInfo(state),
+});
+
+const mapDispatchToProps = dispatch => ({
+  addFilter: (category, newFilter) => dispatch({
+    type: 'ADD_FILTER',
+    category,
+    newFilter,
+  }),
+
+  removeFilter: (category, filterToRemove) => dispatch({
+    type: 'REMOVE_FILTER',
+    category,
+    filterToRemove,
+  }),
+
+  toggleAllOnFilter: category => dispatch({
+    type: 'TOGGLE_ALL_ON_FILTER',
+    category,
+  }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(FilterBy);

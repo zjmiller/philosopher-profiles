@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import {
   Glyphicon,
   NavItem,
@@ -32,4 +33,13 @@ GridViewBtn.propTypes = {
   view: React.PropTypes.string,
 };
 
-export default GridViewBtn;
+const mapStateToProps = () => ({});
+
+const mapDispatchToProps = dispatch => ({
+  enableGridView: () => dispatch({
+    type: 'CHANGE_VIEW',
+    view: 'GRID',
+  }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(GridViewBtn);

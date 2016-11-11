@@ -8,9 +8,6 @@ import SortBy from './SortBy';
 
 function Header({
   changeFilterBy,
-  changeSortBy,
-  enableGridView,
-  enableListView,
   interests,
   view,
 }) {
@@ -28,10 +25,10 @@ function Header({
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <GridViewBtn enableGridView={enableGridView} view={view} />
-            <ListViewBtn enableListView={enableListView} view={view} />
+            <GridViewBtn view={view} />
+            <ListViewBtn view={view} />
             <FilterBy interests={interests} changeFilterBy={changeFilterBy} />
-            <SortBy changeSortBy={changeSortBy} />
+            <SortBy />
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -41,9 +38,6 @@ function Header({
 
 Header.propTypes = {
   changeFilterBy: React.PropTypes.func,
-  changeSortBy: React.PropTypes.func,
-  enableGridView: React.PropTypes.func,
-  enableListView: React.PropTypes.func,
   interests: React.PropTypes.array,
   view: React.PropTypes.string,
 };

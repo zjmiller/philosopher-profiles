@@ -1,16 +1,22 @@
 /* @flow */
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import Header from './Header';
 import Profiles from './Profiles';
 import ProfileBig from './ProfileBig';
+
+import getFilterBy from '../selectors/getFilterBy';
 import getInterests from '../selectors/getInterests';
 import getPhilosophers from '../selectors/getPhilosophers';
 import getPhilosopherById from '../selectors/getPhilosopherById';
+import getSortBy from '../selectors/getSortBy';
+import getView from '../selectors/getView';
 import filterPhilosophers from '../selectors/filterPhilosophers';
 import sortPhilosophers from '../selectors/sortPhilosophers';
 
-import type { Interest, Philosopher, Store } from '../flow-type-aliases/main';
+import type { Interest, Philosopher } from '../flow-type-aliases/main';
 
 class App extends Component {
   state: Object;
@@ -18,34 +24,10 @@ class App extends Component {
   constructor(props: Object) {
     super(props);
     const initialState = {
-      view: 'LIST',
       profile: undefined,
-      filterBy: {
-        gender: [],
-        interests: [],
-      },
-      sortBy: undefined,
     };
 
     this.state = initialState;
-  }
-
-  getChildContext() {
-    return { state: this.props.data };
-  }
-
-  enableListView = () => {
-    this.setState({
-      profile: undefined,
-      view: 'LIST',
-    });
-  }
-
-  enableGridView = () => {
-    this.setState({
-      profile: undefined,
-      view: 'GRID',
-    });
   }
 
   viewProfile = (id: number) => {
@@ -56,22 +38,14 @@ class App extends Component {
     this.setState({ profile: undefined });
   }
 
-  changeFilterBy = (filterBy: Object) => {
-    this.setState({ filterBy });
-  }
-
-  changeSortBy = (newSortBy: boolean) => {
-    this.setState({ sortBy: newSortBy });
-  }
-
   render() {
     const interests: Interest[] = getInterests(this.props.data);
     const philosophers: Philosopher[] = getPhilosophers(this.props.data);
-    const sortOpts = { sortBy: this.state.sortBy };
+    const sortOpts = { sortBy: this.props.sortBy };
     const sortedPhilosophers: Philosopher[] = sortPhilosophers(philosophers, sortOpts);
     const filterOpts = {
-      gender: this.state.filterBy.gender,
-      interests: this.state.filterBy.interests,
+      gender: this.props.filterBy.gender,
+      interests: this.props.filterBy.interests,
     };
     const filteredAndSortedPhilosophers: Philosopher[] =
       filterPhilosophers(sortedPhilosophers, filterOpts);
@@ -79,12 +53,8 @@ class App extends Component {
     return (
       <div>
         <Header
-          changeFilterBy={this.changeFilterBy}
-          changeSortBy={this.changeSortBy}
-          enableGridView={this.enableGridView}
-          enableListView={this.enableListView}
           interests={interests}
-          view={this.state.view}
+          view={this.props.view}
         />
         {
           this.state.profile !== undefined
@@ -95,9 +65,9 @@ class App extends Component {
             />
           :
           <Profiles
-            filterBy={this.state.filterBy}
+            filterBy={this.props.filterBy}
             philosophers={filteredAndSortedPhilosophers}
-            view={this.state.view}
+            view={this.props.view}
             viewProfile={this.viewProfile}
           />
         }
@@ -110,6 +80,18 @@ App.childContextTypes = {
   state: React.PropTypes.object,
 };
 
-App.propTypes = { data: React.PropTypes.object };
+App.propTypes = {
+  data: React.PropTypes.object,
+  filterBy: React.PropTypes.object,
+  sortBy: React.PropTypes.string,
+  view: React.PropTypes.string,
+};
 
-export default App;
+const mapStateToProps = state => ({
+  data: state,
+  filterBy: getFilterBy(state),
+  sortBy: getSortBy(state),
+  view: getView(state),
+});
+
+export default connect(mapStateToProps)(App);
