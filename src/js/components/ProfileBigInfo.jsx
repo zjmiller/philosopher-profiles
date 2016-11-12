@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
+
 import ProfileBigInfoNameHeader from './ProfileBigInfoNameHeader';
 import ProfileBigInfoDegree from './ProfileBigInfoDegree';
 import ProfileBigInfoInstitutions from './ProfileBigInfoInstitutions';

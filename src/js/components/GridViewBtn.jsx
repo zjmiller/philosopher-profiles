@@ -1,30 +1,34 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
+
 import {
   Glyphicon,
-  NavItem,
 } from 'react-bootstrap';
 
 function GridViewBtn({ enableGridView, view }) {
   return (
-    <NavItem eventKey={1} onSelect={enableGridView} href="#">
-      <span
-        style={
-          view === 'GRID'
-          ?
-            {
-              backgroundColor: '#eee',
-              borderRadius: '4px',
-              padding: '8px',
-            }
-          :
-          { padding: '8px' }}
-      >
-        <Glyphicon glyph="th" />
-        {' '}
-        Grid View
-      </span>
-    </NavItem>
+    <li>
+      <Link to="/">
+        <span
+          onClick={enableGridView}
+          style={
+            view === 'GRID'
+            ?
+              {
+                backgroundColor: '#eee',
+                borderRadius: '4px',
+                padding: '8px',
+              }
+            :
+            { padding: '8px' }}
+        >
+          <Glyphicon glyph="th" />
+          {' '}
+          Grid View
+        </span>
+      </Link>
+    </li>
   );
 }
 

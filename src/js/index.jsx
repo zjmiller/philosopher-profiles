@@ -44,8 +44,6 @@ fetch('./data.yaml')
 
     const store = createStore(rootReducer, preloadedState);
 
-    store.subscribe(() => console.log(store.getState()));
-
     ReactDOM.render(
       <Provider store={store}>
         <App />

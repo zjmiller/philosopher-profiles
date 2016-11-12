@@ -1,5 +1,5 @@
-function getPhilosopherById(philosophers, id) {
-  return philosophers.find(philosopher => philosopher.id === id);
+function getPhilosopherById(state, id) {
+  return state.philosophers.find(philosopher => Number(philosopher.id) === Number(id));
 }
 
 export default getPhilosopherById;

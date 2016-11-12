@@ -1,15 +1,20 @@
 import React from 'react';
 import { Grid, Row } from 'react-bootstrap';
+import { connect } from 'react-redux';
+
 import ProfileBigBackBtn from './ProfileBigBackBtn';
 import ProfileBigPhoto from './ProfileBigPhoto';
 import ProfileBigInfo from './ProfileBigInfo';
 
-function ProfileBig({ leaveProfile, philosopher }) {
+import getPhilosopherByFullNameWithoutSpaceSeparation
+  from '../selectors/getPhilosopherByFullNameWithoutSpaceSeparation';
+
+function ProfileBig({ philosopher }) {
   return (
     <Grid>
       <Row style={{ marginBottom: '15px' }}>
         <div style={{ marginLeft: '5px' }}>
-          <ProfileBigBackBtn leaveProfile={leaveProfile} />
+          <ProfileBigBackBtn />
         </div>
       </Row>
       <Row>
@@ -21,8 +26,11 @@ function ProfileBig({ leaveProfile, philosopher }) {
 }
 
 ProfileBig.propTypes = {
-  leaveProfile: React.PropTypes.func,
   philosopher: React.PropTypes.object,
 };
 
-export default ProfileBig;
+const mapStateToProps = (state, { params }) => ({
+  philosopher: getPhilosopherByFullNameWithoutSpaceSeparation(state, params.name),
+});
+
+export default connect(mapStateToProps)(ProfileBig);

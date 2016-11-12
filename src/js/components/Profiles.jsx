@@ -1,15 +1,28 @@
 import React from 'react';
+import { Grid, Row, Col } from 'react-bootstrap';
+import { connect } from 'react-redux';
+
 import ProfilesGridView from './ProfilesGridView';
 import ProfilesListView from './ProfilesListView';
 import FilteringMsg from './FilteringMsg';
 
-function Profiles({ filterBy, philosophers, view, viewProfile }) {
+import getFilterBy from '../selectors/getFilterBy';
+import getView from '../selectors/getView';
+import getFilteredAndSortedPhilosophers from '../selectors/getFilteredAndSortedPhilosophers';
+
+function Profiles({ filterBy, filteredAndSortedPhilosophers, view }) {
   return (
     <div>
       {
         filterBy.gender.length > 0 || filterBy.interests.length > 0
         ?
-          <FilteringMsg filterBy={filterBy} />
+          <Grid>
+            <Row>
+              <Col lg={12}>
+                <FilteringMsg filterBy={filterBy} />
+              </Col>
+            </Row>
+          </Grid>
         :
         ''
       }
@@ -17,13 +30,11 @@ function Profiles({ filterBy, philosophers, view, viewProfile }) {
         view === 'GRID'
         ?
           <ProfilesGridView
-            philosophers={philosophers}
-            viewProfile={viewProfile}
+            philosophers={filteredAndSortedPhilosophers}
           />
         :
         <ProfilesListView
-          philosophers={philosophers}
-          viewProfile={viewProfile}
+          philosophers={filteredAndSortedPhilosophers}
         />
       }
     </div>
@@ -32,9 +43,14 @@ function Profiles({ filterBy, philosophers, view, viewProfile }) {
 
 Profiles.propTypes = {
   filterBy: React.PropTypes.object,
-  philosophers: React.PropTypes.array,
+  filteredAndSortedPhilosophers: React.PropTypes.array,
   view: React.PropTypes.string,
-  viewProfile: React.PropTypes.func,
 };
 
-export default Profiles;
+const mapStateToProps = state => ({
+  filterBy: getFilterBy(state),
+  filteredAndSortedPhilosophers: getFilteredAndSortedPhilosophers(state),
+  view: getView(state),
+});
+
+export default connect(mapStateToProps)(Profiles);

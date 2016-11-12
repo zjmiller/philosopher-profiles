@@ -1,26 +1,25 @@
 import React from 'react';
 import { Col, Glyphicon } from 'react-bootstrap';
+import { Link } from 'react-router';
 
-function ProfileBigBackBtn({ leaveProfile }) {
+function ProfileBigBackBtn() {
   return (
     <Col>
-      <span
-        onClick={leaveProfile}
+      <Link
+        to="/"
         style={{
-          cursor: 'pointer',
+          textDecoration: 'none',
         }}
       >
-        {' '}
-        <Glyphicon glyph="chevron-left" />
-        {' '}
-      Back
-      </span>
+        <span>
+          {' '}
+          <Glyphicon glyph="chevron-left" />
+          {' '}
+        Back
+        </span>
+      </Link>
     </Col>
   );
 }
-
-ProfileBigBackBtn.propTypes = {
-  leaveProfile: React.PropTypes.func,
-};
 
 export default ProfileBigBackBtn;
