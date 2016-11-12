@@ -15,7 +15,7 @@ function ProfileBigBackBtn() {
           {' '}
           <Glyphicon glyph="chevron-left" />
           {' '}
-        Back
+          Back
         </span>
       </Link>
     </Col>

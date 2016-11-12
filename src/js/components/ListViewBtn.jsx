@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
+import { Glyphicon } from 'react-bootstrap';
 
-import {
-  Glyphicon,
-} from 'react-bootstrap';
+import getView from '../selectors/getView';
 
 function ListViewBtn({ enableListView, view }) {
   return (
@@ -32,7 +31,9 @@ ListViewBtn.propTypes = {
   view: React.PropTypes.string,
 };
 
-const mapStateToProps = () => ({});
+const mapStateToProps = state => ({
+  view: getView(state),
+});
 
 const mapDispatchToProps = dispatch => ({
   enableListView: () => dispatch({

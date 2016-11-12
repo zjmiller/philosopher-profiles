@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import PhilosopherFullName from './PhilosopherFullName';
 
-function ProfileGridView({ philosopher, handleClick }) {
+function ProfileGridView({ philosopher }) {
   return (
     <Link
       to={`/${philosopher.name.first}${philosopher.name.last}`}
@@ -11,7 +11,6 @@ function ProfileGridView({ philosopher, handleClick }) {
       }}
     >
       <div
-        onClick={handleClick}
         style={{
           alignItems: 'center',
           backgroundColor: '#111',
@@ -19,6 +18,7 @@ function ProfileGridView({ philosopher, handleClick }) {
           backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'contain',
+          borderRadius: '5px',
           cursor: 'pointer',
           display: 'flex',
           flexDirection: 'column-reverse',
@@ -49,7 +49,6 @@ function ProfileGridView({ philosopher, handleClick }) {
 }
 
 ProfileGridView.propTypes = {
-  handleClick: React.PropTypes.func,
   philosopher: React.PropTypes.object,
 };
 

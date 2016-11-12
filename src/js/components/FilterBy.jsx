@@ -8,6 +8,7 @@ import {
 } from 'react-bootstrap';
 
 import getGenderFilterInfo from '../selectors/getGenderFilterInfo';
+import getInterests from '../selectors/getInterests';
 import getInterestsFilterInfo from '../selectors/getInterestsFilterInfo';
 import getIdOfInterest from '../selectors/getIdOfInterest';
 import getNameOfInterest from '../selectors/getNameOfInterest';
@@ -102,6 +103,7 @@ FilterBy.propTypes = {
 
 const mapStateToProps = state => ({
   genderFilterInfo: getGenderFilterInfo(state),
+  interests: getInterests(state),
   interestsFilterInfo: getInterestsFilterInfo(state),
 });
 

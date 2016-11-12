@@ -1,16 +1,13 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
+
 import FilterBy from './FilterBy';
 import GridViewBtn from './GridViewBtn';
 import ListViewBtn from './ListViewBtn';
 import SiteBrand from './SiteBrand';
 import SortBy from './SortBy';
 
-function Header({
-  changeFilterBy,
-  interests,
-  view,
-}) {
+function Header() {
   return (
     <div>
       <Navbar
@@ -25,9 +22,9 @@ function Header({
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <GridViewBtn view={view} />
-            <ListViewBtn view={view} />
-            <FilterBy interests={interests} changeFilterBy={changeFilterBy} />
+            <GridViewBtn />
+            <ListViewBtn />
+            <FilterBy />
             <SortBy />
           </Nav>
         </Navbar.Collapse>
@@ -35,11 +32,5 @@ function Header({
     </div>
   );
 }
-
-Header.propTypes = {
-  changeFilterBy: React.PropTypes.func,
-  interests: React.PropTypes.array,
-  view: React.PropTypes.string,
-};
 
 export default Header;

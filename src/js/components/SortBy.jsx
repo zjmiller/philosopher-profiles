@@ -1,9 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {
-  MenuItem,
-  NavDropdown,
-} from 'react-bootstrap';
+import { MenuItem, NavDropdown } from 'react-bootstrap';
 
 function SortBy({ changeSortBy }) {
   return (
