@@ -1,11 +1,12 @@
 /* @flow */
 
 import React from 'react';
+import { connect } from 'react-redux';
 import getInterestById from '../selectors/getInterestById';
 import getNameOfInterest from '../selectors/getNameOfInterest';
 import type { Interest } from '../flow-type-aliases/main';
 
-function FilteringMsg({ filterBy }: { filterBy: Object }, { state }: { state: Object }) {
+function FilteringMsg({ filterBy, getInterestByIdBound }) {
   return (
     <div
       style={{
@@ -39,7 +40,7 @@ function FilteringMsg({ filterBy }: { filterBy: Object }, { state }: { state: Ob
           <span>Interests{' '}
             <span style={{ color: '#955' }}>
             ({filterBy.interests
-              .map((id: number): Interest => getInterestById(state, id))
+              .map((id: number): Interest => getInterestByIdBound(id))
               .map((interest: Interest): string => getNameOfInterest(interest))
               .join(', ')})
             </span>
@@ -51,12 +52,13 @@ function FilteringMsg({ filterBy }: { filterBy: Object }, { state }: { state: Ob
   );
 }
 
-FilteringMsg.contextTypes = {
-  state: React.PropTypes.object,
-};
-
 FilteringMsg.propTypes = {
-  filterBy: React.PropTypes.object,
+  filterBy: React.PropTypes.object.isRequired,
+  getInterestByIdBound: React.PropTypes.func.isRequired,
 };
 
-export default FilteringMsg;
+const mapStateToProps = state => ({
+  getInterestByIdBound: getInterestById.bind(this, state),
+});
+
+export default connect(mapStateToProps)(FilteringMsg);
