@@ -9,8 +9,6 @@ import { Provider } from 'react-redux';
 import App from './components/App';
 import rootReducer from './reducers/rootReducer';
 
-import type { Interest, Philosopher } from './flow-type-aliases/main';
-
 const flatten = require('lodash/flatten');
 const uniq = require('lodash/uniq');
 
@@ -24,11 +22,10 @@ fetch('./data.yaml')
     );
 
     const arrOfArrOfInterestNames =
-      philosophers.map((philosopher): string[] => philosopher.interests);
-    const arrOfInterestNames: string[] = flatten(arrOfArrOfInterestNames);
-    const arrOfUniqInterestNames: string[] = uniq(arrOfInterestNames);
-
-    const interests: Interest[] = arrOfUniqInterestNames.map((interestName, i) =>
+      philosophers.map((philosopher) => philosopher.interests);
+    const arrOfInterestNames = flatten(arrOfArrOfInterestNames);
+    const arrOfUniqInterestNames = uniq(arrOfInterestNames);
+    const interests = arrOfUniqInterestNames.map((interestName, i) =>
       ({ id: i, name: interestName }));
 
     philosophers.forEach((philosopher): Philosopher => {
