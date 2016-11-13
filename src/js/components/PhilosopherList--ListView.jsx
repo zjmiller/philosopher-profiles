@@ -6,7 +6,7 @@ import {
 } from 'react-bootstrap';
 import ProfileListView from './PhilosopherList--ListView__ListItem';
 
-function ProfilesListView({ philosophers, viewProfile }) {
+function PhilosopherListListView({ philosophers, viewProfile }) {
   return (
     <Grid>
       <Row>
@@ -26,9 +26,9 @@ function ProfilesListView({ philosophers, viewProfile }) {
   );
 }
 
-ProfilesListView.propTypes = {
+PhilosopherListListView.propTypes = {
   philosophers: React.PropTypes.array,
   viewProfile: React.PropTypes.func,
 };
 
-export default ProfilesListView;
+export default PhilosopherListListView;

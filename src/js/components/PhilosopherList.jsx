@@ -10,7 +10,7 @@ import getFilterBy from '../selectors/getFilterBy';
 import getView from '../selectors/getView';
 import getFilteredAndSortedPhilosophers from '../selectors/getFilteredAndSortedPhilosophers';
 
-function Profiles({ filterBy, filteredAndSortedPhilosophers, view }) {
+function PhilosopherList({ filterBy, filteredAndSortedPhilosophers, view }) {
   return (
     <div>
       {
@@ -41,7 +41,7 @@ function Profiles({ filterBy, filteredAndSortedPhilosophers, view }) {
   );
 }
 
-Profiles.propTypes = {
+PhilosopherList.propTypes = {
   filterBy: React.PropTypes.object,
   filteredAndSortedPhilosophers: React.PropTypes.array,
   view: React.PropTypes.string,
@@ -53,4 +53,4 @@ const mapStateToProps = state => ({
   view: getView(state),
 });
 
-export default connect(mapStateToProps)(Profiles);
+export default connect(mapStateToProps)(PhilosopherList);

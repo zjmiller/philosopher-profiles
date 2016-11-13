@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import getDegreeOfPhilosopher from '../selectors/getDegreeOfPhilosopher';
 
-function ProfileBigInfoDegree({ degree }) {
+function PhilosopherDegree({ degree }) {
   return (
     <div>
       <span
@@ -21,7 +21,7 @@ function ProfileBigInfoDegree({ degree }) {
   );
 }
 
-ProfileBigInfoDegree.propTypes = {
+PhilosopherDegree.propTypes = {
   degree: React.PropTypes.string,
 };
 
@@ -29,4 +29,4 @@ const mapStateToProps = (state, { philosopher }) => ({
   degree: getDegreeOfPhilosopher(state, philosopher),
 });
 
-export default connect(mapStateToProps)(ProfileBigInfoDegree);
+export default connect(mapStateToProps)(PhilosopherDegree);

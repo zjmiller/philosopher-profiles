@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import PhilosopherFullName from './PhilosopherFullName';
 import PhilosopherTimeAlive from './PhilosopherTimeAlive';
 
-function ProfileListView({ philosopher }) {
+function ListItem({ philosopher }) {
   return (
     <Link
       to={`/${philosopher.name.first}${philosopher.name.last}`}
@@ -40,8 +40,8 @@ function ProfileListView({ philosopher }) {
   );
 }
 
-ProfileListView.propTypes = {
+ListItem.propTypes = {
   philosopher: React.PropTypes.object,
 };
 
-export default ProfileListView;
+export default ListItem;

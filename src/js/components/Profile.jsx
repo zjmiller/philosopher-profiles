@@ -9,7 +9,7 @@ import Profile__Info from './Profile__Info';
 import getPhilosopherByFullNameWithoutSpaceSeparation
   from '../selectors/getPhilosopherByFullNameWithoutSpaceSeparation';
 
-function ProfileBig({ philosopher }) {
+function Profile({ philosopher }) {
   return (
     <Grid>
       <Row style={{ marginBottom: '15px' }}>
@@ -25,7 +25,7 @@ function ProfileBig({ philosopher }) {
   );
 }
 
-ProfileBig.propTypes = {
+Profile.propTypes = {
   philosopher: React.PropTypes.object,
 };
 
@@ -33,4 +33,4 @@ const mapStateToProps = (state, { params }) => ({
   philosopher: getPhilosopherByFullNameWithoutSpaceSeparation(state, params.name),
 });
 
-export default connect(mapStateToProps)(ProfileBig);
+export default connect(mapStateToProps)(Profile);

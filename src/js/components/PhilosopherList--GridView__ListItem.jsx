@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import PhilosopherFullName from './PhilosopherFullName';
 
-function ProfileGridView({ philosopher }) {
+function ListItem({ philosopher }) {
   return (
     <Link
       to={`/${philosopher.name.first}${philosopher.name.last}`}
@@ -48,8 +48,8 @@ function ProfileGridView({ philosopher }) {
   );
 }
 
-ProfileGridView.propTypes = {
+ListItem.propTypes = {
   philosopher: React.PropTypes.object,
 };
 
-export default ProfileGridView;
+export default ListItem;
