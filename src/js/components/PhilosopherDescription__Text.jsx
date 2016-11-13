@@ -1,6 +1,6 @@
 import React from 'react';
 
-function PhilosopherDescription__Text({ text }) {
+export function PhilosopherDescription__Text({ text }) {
   return (
     <div>
       {text.split(/[\n\r]/g).map((chunk, i) =>

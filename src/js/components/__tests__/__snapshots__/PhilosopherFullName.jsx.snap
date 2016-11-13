@@ -1,0 +1,7 @@
+exports[`test PhilosopherFullName renders correctly 1`] = `
+<span>
+  Zachary
+   
+  Miller
+</span>
+`;

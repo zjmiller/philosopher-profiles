@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import getFirstNameOfPhilosopher from '../selectors/getFirstNameOfPhilosopher';
 import getLastNameOfPhilosopher from '../selectors/getLastNameOfPhilosopher';
 
-function PhilosopherFullName({ firstName, lastName }) {
+export function PhilosopherFullName({ firstName, lastName }) {
   return (
     <span>
       {firstName}
