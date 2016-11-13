@@ -1,10 +1,7 @@
-/* @flow */
-
 import React from 'react';
 import { connect } from 'react-redux';
 import getInterestById from '../selectors/getInterestById';
 import getNameOfInterest from '../selectors/getNameOfInterest';
-import type { Interest } from '../flow-type-aliases/main';
 
 function FilteringMsg({ filterBy, getInterestByIdBound, getNameOfInterestBound }) {
   return (
@@ -40,8 +37,8 @@ function FilteringMsg({ filterBy, getInterestByIdBound, getNameOfInterestBound }
           <span>Interests{' '}
             <span style={{ color: '#955' }}>
             ({filterBy.interests
-              .map((id: number): Interest => getInterestByIdBound(id))
-              .map((interest: Interest): string => getNameOfInterestBound(interest))
+              .map(id => getInterestByIdBound(id))
+              .map(interest => getNameOfInterestBound(interest))
               .join(', ')})
             </span>
           </span>
