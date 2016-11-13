@@ -2,7 +2,7 @@ import React from 'react';
 import getInstitutionsOfPhilosopher from '../selectors/getInstitutionsOfPhilosopher';
 import getNameOfInstitution from '../selectors/getNameOfInstitution';
 
-function ProfileBigInfoInstitutions({ philosopher }) {
+function PhilosopherInstitutions({ philosopher }) {
   return (
     <div>
       <span
@@ -23,8 +23,8 @@ function ProfileBigInfoInstitutions({ philosopher }) {
   );
 }
 
-ProfileBigInfoInstitutions.propTypes = {
+PhilosopherInstitutions.propTypes = {
   philosopher: React.PropTypes.object,
 };
 
-export default ProfileBigInfoInstitutions;
+export default PhilosopherInstitutions;

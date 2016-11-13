@@ -4,7 +4,7 @@ import {
   Row,
   Col,
 } from 'react-bootstrap';
-import ProfileListView from './ProfileListView';
+import ProfileListView from './PhilosopherList--ListView__ListItem';
 
 function ProfilesListView({ philosophers, viewProfile }) {
   return (

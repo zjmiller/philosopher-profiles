@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import {
   Checkbox,
   ControlLabel,
   FormGroup,
   NavDropdown,
 } from 'react-bootstrap';
+import { connect } from 'react-redux';
 
 import getGenderFilterInfo from '../selectors/getGenderFilterInfo';
 import getInterests from '../selectors/getInterests';
@@ -13,7 +13,7 @@ import getInterestsFilterInfo from '../selectors/getInterestsFilterInfo';
 import getIdOfInterest from '../selectors/getIdOfInterest';
 import getNameOfInterest from '../selectors/getNameOfInterest';
 
-class FilterBy extends Component {
+class Header__FilterBy extends Component {
 
   handleChange = (category, filter) => {
     if (filter === 'all') {
@@ -92,7 +92,7 @@ class FilterBy extends Component {
   }
 }
 
-FilterBy.propTypes = {
+Header__FilterBy.propTypes = {
   addFilter: React.PropTypes.func,
   genderFilterInfo: React.PropTypes.array,
   interests: React.PropTypes.array,
@@ -126,4 +126,4 @@ const mapDispatchToProps = dispatch => ({
   }),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(FilterBy);
+export default connect(mapStateToProps, mapDispatchToProps)(Header__FilterBy);

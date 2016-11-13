@@ -1,11 +1,11 @@
 import React from 'react';
+import { Glyphicon } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import { Glyphicon } from 'react-bootstrap';
 
 import getView from '../selectors/getView';
 
-function GridViewBtn({ enableGridView, view }) {
+function Header__GridViewBtn({ enableGridView, view }) {
   return (
     <li>
       <Link to="/">
@@ -20,7 +20,8 @@ function GridViewBtn({ enableGridView, view }) {
                 padding: '8px',
               }
             :
-            { padding: '8px' }}
+            { padding: '8px' }
+          }
         >
           <Glyphicon glyph="th" />
           {' '}
@@ -31,7 +32,7 @@ function GridViewBtn({ enableGridView, view }) {
   );
 }
 
-GridViewBtn.propTypes = {
+Header__GridViewBtn.propTypes = {
   enableGridView: React.PropTypes.func,
   view: React.PropTypes.string,
 };
@@ -47,4 +48,4 @@ const mapDispatchToProps = dispatch => ({
   }),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(GridViewBtn);
+export default connect(mapStateToProps, mapDispatchToProps)(Header__GridViewBtn);

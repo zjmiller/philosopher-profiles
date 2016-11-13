@@ -4,7 +4,7 @@ import {
   Row,
   Col,
 } from 'react-bootstrap';
-import ProfileGridView from './ProfileGridView';
+import ProfileGridView from './PhilosopherList--GridView__ListItem';
 
 function ProfilesGridView({ philosophers }) {
   return (

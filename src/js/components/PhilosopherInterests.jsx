@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import getInterestsOfPhilosopher from '../selectors/getInterestsOfPhilosopher';
 import getNameOfInterest from '../selectors/getNameOfInterest';
 
-function ProfileBigInfoInterests({ interests }) {
+function PhilosopherInterests({ interests }) {
   return (
     <div>
       <span
@@ -24,11 +24,7 @@ function ProfileBigInfoInterests({ interests }) {
   );
 }
 
-ProfileBigInfoInterests.contextTypes = {
-  state: React.PropTypes.object,
-};
-
-ProfileBigInfoInterests.propTypes = {
+PhilosopherInterests.propTypes = {
   interests: React.PropTypes.array,
 };
 
@@ -36,4 +32,4 @@ const mapStateToProps = (state, { philosopher }) => ({
   interests: getInterestsOfPhilosopher(state, philosopher),
 });
 
-export default connect(mapStateToProps)(ProfileBigInfoInterests);
+export default connect(mapStateToProps)(PhilosopherInterests);

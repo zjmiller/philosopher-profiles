@@ -2,9 +2,9 @@ import React from 'react';
 import { Grid, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
-import ProfileBigBackBtn from './ProfileBigBackBtn';
-import ProfileBigPhoto from './ProfileBigPhoto';
-import ProfileBigInfo from './ProfileBigInfo';
+import Profile__BackBtn from './Profile__BackBtn';
+import Profile__Photo from './Profile__Photo';
+import Profile__Info from './Profile__Info';
 
 import getPhilosopherByFullNameWithoutSpaceSeparation
   from '../selectors/getPhilosopherByFullNameWithoutSpaceSeparation';
@@ -14,12 +14,12 @@ function ProfileBig({ philosopher }) {
     <Grid>
       <Row style={{ marginBottom: '15px' }}>
         <div style={{ marginLeft: '5px' }}>
-          <ProfileBigBackBtn />
+          <Profile__BackBtn />
         </div>
       </Row>
       <Row>
-        <ProfileBigPhoto philosopher={philosopher} />
-        <ProfileBigInfo philosopher={philosopher} />
+        <Profile__Photo philosopher={philosopher} />
+        <Profile__Info philosopher={philosopher} />
       </Row>
     </Grid>
   );

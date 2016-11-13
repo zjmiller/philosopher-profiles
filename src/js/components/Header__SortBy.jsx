@@ -1,8 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { MenuItem, NavDropdown } from 'react-bootstrap';
+import { connect } from 'react-redux';
 
-function SortBy({ changeSortBy }) {
+function Header__SortBy({ changeSortBy }) {
   return (
     <NavDropdown eventKey={3} title="Sort By" id="basic-nav-dropdown">
       <MenuItem
@@ -21,7 +21,7 @@ function SortBy({ changeSortBy }) {
   );
 }
 
-SortBy.propTypes = {
+Header__SortBy.propTypes = {
   changeSortBy: React.PropTypes.func,
 };
 
@@ -34,4 +34,4 @@ const mapDispatchToProps = dispatch => ({
   }),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SortBy);
+export default connect(mapStateToProps, mapDispatchToProps)(Header__SortBy);

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ProfileBigInfoDescriptionText({ text }) {
+function PhilosopherDescription__Text({ text }) {
   return (
     <div>
       {text.split(/[\n\r]/g).map((chunk, i) =>
@@ -18,8 +18,8 @@ function ProfileBigInfoDescriptionText({ text }) {
   );
 }
 
-ProfileBigInfoDescriptionText.propTypes = {
+PhilosopherDescription__Text.propTypes = {
   text: React.PropTypes.string,
 };
 
-export default ProfileBigInfoDescriptionText;
+export default PhilosopherDescription__Text;

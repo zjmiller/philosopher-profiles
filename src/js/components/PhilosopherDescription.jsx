@@ -1,8 +1,8 @@
 import React from 'react';
-import ProfileBigInfoDescriptionText from './ProfileBigInfoDescriptionText';
+import PhilosopherDescription__Text from './PhilosopherDescription__Text';
 import getDescriptionOfPhilosopher from '../selectors/getDescriptionOfPhilosopher';
 
-function ProfileBigInfoDescription({ philosopher }) {
+function PhilosopherDescription({ philosopher }) {
   return (
     <div>
       <span
@@ -15,7 +15,7 @@ function ProfileBigInfoDescription({ philosopher }) {
         Description
       </span>
       <div style={{ marginLeft: '10px' }}>
-        <ProfileBigInfoDescriptionText
+        <PhilosopherDescription__Text
           text={getDescriptionOfPhilosopher(philosopher)}
         />
       </div>
@@ -23,8 +23,8 @@ function ProfileBigInfoDescription({ philosopher }) {
   );
 }
 
-ProfileBigInfoDescription.propTypes = {
+PhilosopherDescription.propTypes = {
   philosopher: React.PropTypes.object,
 };
 
-export default ProfileBigInfoDescription;
+export default PhilosopherDescription;

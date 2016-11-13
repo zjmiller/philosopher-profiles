@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Glyphicon } from 'react-bootstrap';
 import { Link } from 'react-router';
 
-function ProfileBigBackBtn() {
+function Profile__BackBtn() {
   return (
     <Col>
       <Link
@@ -22,4 +22,4 @@ function ProfileBigBackBtn() {
   );
 }
 
-export default ProfileBigBackBtn;
+export default Profile__BackBtn;

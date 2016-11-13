@@ -2,7 +2,7 @@ import React from 'react';
 import PhilosopherFullName from './PhilosopherFullName';
 import PhilosopherTimeAlive from './PhilosopherTimeAlive';
 
-function ProfileBigInfoNameHeader({ philosopher }) {
+function PhilosopherNameAndDateHeader({ philosopher }) {
   return (
     <h2
       style={{
@@ -20,8 +20,8 @@ function ProfileBigInfoNameHeader({ philosopher }) {
   );
 }
 
-ProfileBigInfoNameHeader.propTypes = {
+PhilosopherNameAndDateHeader.propTypes = {
   philosopher: React.PropTypes.object,
 };
 
-export default ProfileBigInfoNameHeader;
+export default PhilosopherNameAndDateHeader;

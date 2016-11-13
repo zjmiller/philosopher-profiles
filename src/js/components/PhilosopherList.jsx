@@ -2,8 +2,8 @@ import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
-import ProfilesGridView from './ProfilesGridView';
-import ProfilesListView from './ProfilesListView';
+import ProfilesGridView from './PhilosopherList--GridView';
+import ProfilesListView from './PhilosopherList--ListView';
 import FilteringMsg from './FilteringMsg';
 
 import getFilterBy from '../selectors/getFilterBy';

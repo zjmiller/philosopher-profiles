@@ -1,45 +1,20 @@
-/* @flow */
-
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import { HashRouter, Match } from 'react-router';
 
 import Header from './Header';
-import Profiles from './Profiles';
-import ProfileBig from './ProfileBig';
+import PhilosopherList from './PhilosopherList';
+import Profile from './Profile';
 
-import getInterests from '../selectors/getInterests';
-import getView from '../selectors/getView';
-
-class App extends Component {
-  render() {
-    return (
-      <HashRouter>
-        <div>
-          <Header
-            interests={this.props.interests}
-            view={this.props.view}
-          />
-          <Match exactly pattern="/" component={Profiles} />
-          <Match pattern="/:name" component={ProfileBig} />
-        </div>
-      </HashRouter>
-    );
-  }
+function App() {
+  return (
+    <HashRouter>
+      <div>
+        <Header />
+        <Match exactly pattern="/" component={PhilosopherList} />
+        <Match pattern="/:name" component={Profile} />
+      </div>
+    </HashRouter>
+  );
 }
 
-App.childContextTypes = {
-  state: React.PropTypes.object,
-};
-
-App.propTypes = {
-  interests: React.PropTypes.array,
-  view: React.PropTypes.string,
-};
-
-const mapStateToProps = state => ({
-  interests: getInterests(state),
-  view: getView(state),
-});
-
-export default connect(mapStateToProps)(App);
+export default App;
