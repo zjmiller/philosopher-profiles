@@ -7,15 +7,27 @@ function Header__SortBy({ changeSortBy }) {
     <NavDropdown eventKey={3} title="Sort By" id="basic-nav-dropdown">
       <MenuItem
         eventKey={3.1}
-        onClick={() => changeSortBy('LAST_NAME')}
+        onClick={() => changeSortBy('LAST_NAME_ASC')}
       >
-        Last Name
+        Last Name <span style={{ fontVariant: 'small-caps' }}>a-z</span>
       </MenuItem>
       <MenuItem
         eventKey={3.2}
-        onClick={() => changeSortBy('YEAR')}
+        onClick={() => changeSortBy('LAST_NAME_DESC')}
       >
-        Year
+        Last Name <span style={{ fontVariant: 'small-caps' }}>z-a</span>
+      </MenuItem>
+      <MenuItem
+        eventKey={3.3}
+        onClick={() => changeSortBy('YEAR_ASC')}
+      >
+        Oldest First
+      </MenuItem>
+      <MenuItem
+        eventKey={3.4}
+        onClick={() => changeSortBy('YEAR_DESC')}
+      >
+        Most Recent First
       </MenuItem>
     </NavDropdown>
   );
