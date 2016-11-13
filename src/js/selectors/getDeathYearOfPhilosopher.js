@@ -1,4 +1,4 @@
-function getDeathYearOfPhilosopher(philosopher) {
+function getDeathYearOfPhilosopher(state, philosopher) {
   return philosopher.death.year;
 }
 

@@ -1,8 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PhilosopherDescription__Text from './PhilosopherDescription__Text';
 import getDescriptionOfPhilosopher from '../selectors/getDescriptionOfPhilosopher';
 
-function PhilosopherDescription({ philosopher }) {
+function PhilosopherDescription({ description }) {
   return (
     <div>
       <span
@@ -16,7 +17,7 @@ function PhilosopherDescription({ philosopher }) {
       </span>
       <div style={{ marginLeft: '10px' }}>
         <PhilosopherDescription__Text
-          text={getDescriptionOfPhilosopher(philosopher)}
+          text={description}
         />
       </div>
     </div>
@@ -24,7 +25,11 @@ function PhilosopherDescription({ philosopher }) {
 }
 
 PhilosopherDescription.propTypes = {
-  philosopher: React.PropTypes.object,
+  description: React.PropTypes.string,
 };
 
-export default PhilosopherDescription;
+const mapStateToProps = (state, { philosopher }) => ({
+  description: getDescriptionOfPhilosopher(state, philosopher),
+});
+
+export default connect(mapStateToProps)(PhilosopherDescription);

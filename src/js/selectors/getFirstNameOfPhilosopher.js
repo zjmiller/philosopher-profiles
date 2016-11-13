@@ -1,4 +1,4 @@
-function getFirstNameOfPhilosopher(philosopher) {
+function getFirstNameOfPhilosopher(state, philosopher) {
   return philosopher.name.first;
 }
 

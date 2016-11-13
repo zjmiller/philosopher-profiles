@@ -1,4 +1,4 @@
-function getNameOfIdea(idea) {
+function getNameOfIdea(state, idea) {
   return idea;
 }
 

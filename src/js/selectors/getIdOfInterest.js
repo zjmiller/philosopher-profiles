@@ -1,4 +1,4 @@
-function getIdOfInterest(interest) {
+function getIdOfInterest(state, interest) {
   return interest.id;
 }
 

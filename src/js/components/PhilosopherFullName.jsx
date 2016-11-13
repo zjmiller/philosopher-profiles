@@ -1,19 +1,26 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import getFirstNameOfPhilosopher from '../selectors/getFirstNameOfPhilosopher';
 import getLastNameOfPhilosopher from '../selectors/getLastNameOfPhilosopher';
 
-function PhilosopherFullName({ philosopher }) {
+function PhilosopherFullName({ firstName, lastName }) {
   return (
     <span>
-      {getFirstNameOfPhilosopher(philosopher)}
-      {getFirstNameOfPhilosopher(philosopher) ? ' ' : ''}
-      {getLastNameOfPhilosopher(philosopher)}
+      {firstName}
+      {firstName ? ' ' : ''}
+      {lastName}
     </span>
   );
 }
 
 PhilosopherFullName.propTypes = {
-  philosopher: React.PropTypes.object,
+  firstName: React.PropTypes.string,
+  lastName: React.PropTypes.string,
 };
 
-export default PhilosopherFullName;
+const mapStateToProps = (state, { philosopher }) => ({
+  firstName: getFirstNameOfPhilosopher(state, philosopher),
+  lastName: getLastNameOfPhilosopher(state, philosopher),
+});
+
+export default connect(mapStateToProps)(PhilosopherFullName);

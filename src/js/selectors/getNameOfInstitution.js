@@ -1,4 +1,4 @@
-function getNameOfInstitution(institution) {
+function getNameOfInstitution(state, institution) {
   return institution;
 }
 

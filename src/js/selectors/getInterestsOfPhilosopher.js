@@ -5,7 +5,7 @@ function getInterestsOfPhilosopher(state, philosopher) {
   const ids = philosopher.interests;
   return (
     getInterests(state)
-      .filter(interest => ids.indexOf(getIdOfInterest(interest)) > -1)
+      .filter(interest => ids.indexOf(getIdOfInterest(state, interest)) > -1)
   );
 }
 

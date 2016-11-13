@@ -1,4 +1,4 @@
-function getDegreeOfPhilosopher(philosopher) {
+function getDegreeOfPhilosopher(state, philosopher) {
   return philosopher.degree;
 }
 

@@ -1,27 +1,38 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import getBirthYearOfPhilosopher from '../selectors/getBirthYearOfPhilosopher';
 import getBirthEraOfPhilosopher from '../selectors/getBirthEraOfPhilosopher';
 import getDeathYearOfPhilosopher from '../selectors/getDeathYearOfPhilosopher';
 import getDeathEraOfPhilosopher from '../selectors/getDeathEraOfPhilosopher';
 
-function PhilosopherTimeAlive({ philosopher }) {
+function PhilosopherTimeAlive({ birthEra, birthYear, deathEra, deathYear }) {
   return (
     <span>
-      {getBirthYearOfPhilosopher(philosopher)}
+      {birthYear}
       <span style={{ fontVariant: 'small-caps', marginLeft: '2px' }} >
-        {getBirthEraOfPhilosopher(philosopher).toLowerCase()}
+        {birthEra.toLowerCase()}
       </span>
       {' '}–{' '}
-      {getDeathYearOfPhilosopher(philosopher)}
+      {deathYear}
       <span style={{ fontVariant: 'small-caps', marginLeft: '2px' }} >
-        {getDeathEraOfPhilosopher(philosopher).toLowerCase()}
+        {deathEra.toLowerCase()}
       </span>
     </span>
   );
 }
 
 PhilosopherTimeAlive.propTypes = {
-  philosopher: React.PropTypes.object,
+  birthEra: React.PropTypes.string,
+  birthYear: React.PropTypes.number,
+  deathEra: React.PropTypes.string,
+  deathYear: React.PropTypes.number,
 };
 
-export default PhilosopherTimeAlive;
+const mapStateToProps = (state, { philosopher }) => ({
+  birthEra: getBirthEraOfPhilosopher(state, philosopher),
+  birthYear: getBirthYearOfPhilosopher(state, philosopher),
+  deathEra: getDeathEraOfPhilosopher(state, philosopher),
+  deathYear: getDeathYearOfPhilosopher(state, philosopher),
+});
+
+export default connect(mapStateToProps)(PhilosopherTimeAlive);

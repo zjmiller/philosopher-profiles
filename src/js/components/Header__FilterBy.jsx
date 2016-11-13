@@ -38,10 +38,12 @@ class Header__FilterBy extends Component {
     const interestCheckboxes = interests.map((interest, i) =>
       <Checkbox
         key={i}
-        onChange={() => this.handleChange('interests', getIdOfInterest(interest))}
-        checked={this.props.interestsFilterInfo.indexOf(getIdOfInterest(interest)) > -1}
+        onChange={() => this.handleChange('interests', this.props.getIdOfInterestBound(interest))}
+        checked={
+          this.props.interestsFilterInfo.indexOf(this.props.getIdOfInterestBound(interest)) > -1
+        }
       >
-        {getNameOfInterest(interest)}
+        {this.props.getNameOfInterestBound(interest)}
       </Checkbox>
     );
 
@@ -95,6 +97,8 @@ class Header__FilterBy extends Component {
 Header__FilterBy.propTypes = {
   addFilter: React.PropTypes.func,
   genderFilterInfo: React.PropTypes.array,
+  getIdOfInterestBound: React.PropTypes.func,
+  getNameOfInterestBound: React.PropTypes.func,
   interests: React.PropTypes.array,
   interestsFilterInfo: React.PropTypes.array,
   removeFilter: React.PropTypes.func,
@@ -102,6 +106,8 @@ Header__FilterBy.propTypes = {
 };
 
 const mapStateToProps = state => ({
+  getIdOfInterestBound: getIdOfInterest.bind(this, state),
+  getNameOfInterestBound: getNameOfInterest.bind(this, state),
   genderFilterInfo: getGenderFilterInfo(state),
   interests: getInterests(state),
   interestsFilterInfo: getInterestsFilterInfo(state),

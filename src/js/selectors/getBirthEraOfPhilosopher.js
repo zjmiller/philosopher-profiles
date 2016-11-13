@@ -1,4 +1,4 @@
-function getBirthEraOfPhilosopher(philosopher) {
+function getBirthEraOfPhilosopher(state, philosopher) {
   return philosopher.birth.era;
 }
 

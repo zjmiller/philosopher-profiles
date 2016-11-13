@@ -1,8 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import getInstitutionsOfPhilosopher from '../selectors/getInstitutionsOfPhilosopher';
 import getNameOfInstitution from '../selectors/getNameOfInstitution';
 
-function PhilosopherInstitutions({ philosopher }) {
+function PhilosopherInstitutions({ getNameOfInstitutionBound, institutions }) {
   return (
     <div>
       <span
@@ -15,8 +16,8 @@ function PhilosopherInstitutions({ philosopher }) {
         Institutions
       </span>
       <ul>
-        {getInstitutionsOfPhilosopher(philosopher).map((institution, i) =>
-          <li key={i}>{getNameOfInstitution(institution)}</li>
+        {institutions.map((institution, i) =>
+          <li key={i}>{getNameOfInstitutionBound(institution)}</li>
         )}
       </ul>
     </div>
@@ -24,7 +25,13 @@ function PhilosopherInstitutions({ philosopher }) {
 }
 
 PhilosopherInstitutions.propTypes = {
-  philosopher: React.PropTypes.object,
+  getNameOfInstitutionBound: React.PropTypes.func,
+  institutions: React.PropTypes.array,
 };
 
-export default PhilosopherInstitutions;
+const mapStateToProps = (state, { philosopher }) => ({
+  getNameOfInstitutionBound: getNameOfInstitution.bind(this, state),
+  institutions: getInstitutionsOfPhilosopher(state, philosopher),
+});
+
+export default connect(mapStateToProps)(PhilosopherInstitutions);

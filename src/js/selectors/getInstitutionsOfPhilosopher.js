@@ -1,4 +1,4 @@
-function getInstitutionsOfPhilosopher(philosopher) {
+function getInstitutionsOfPhilosopher(state, philosopher) {
   return philosopher.institutions;
 }
 

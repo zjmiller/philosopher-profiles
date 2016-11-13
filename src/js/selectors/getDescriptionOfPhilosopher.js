@@ -1,4 +1,4 @@
-function getDescriptionOfPhilosopher(philosopher) {
+function getDescriptionOfPhilosopher(state, philosopher) {
   return philosopher.description;
 }
 

@@ -6,7 +6,7 @@ import getInterestById from '../selectors/getInterestById';
 import getNameOfInterest from '../selectors/getNameOfInterest';
 import type { Interest } from '../flow-type-aliases/main';
 
-function FilteringMsg({ filterBy, getInterestByIdBound }) {
+function FilteringMsg({ filterBy, getInterestByIdBound, getNameOfInterestBound }) {
   return (
     <div
       style={{
@@ -41,7 +41,7 @@ function FilteringMsg({ filterBy, getInterestByIdBound }) {
             <span style={{ color: '#955' }}>
             ({filterBy.interests
               .map((id: number): Interest => getInterestByIdBound(id))
-              .map((interest: Interest): string => getNameOfInterest(interest))
+              .map((interest: Interest): string => getNameOfInterestBound(interest))
               .join(', ')})
             </span>
           </span>
@@ -55,10 +55,12 @@ function FilteringMsg({ filterBy, getInterestByIdBound }) {
 FilteringMsg.propTypes = {
   filterBy: React.PropTypes.object.isRequired,
   getInterestByIdBound: React.PropTypes.func.isRequired,
+  getNameOfInterestBound: React.PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
   getInterestByIdBound: getInterestById.bind(this, state),
+  getNameOfInterestBound: getNameOfInterest.bind(this, state),
 });
 
 export default connect(mapStateToProps)(FilteringMsg);

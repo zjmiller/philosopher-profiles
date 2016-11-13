@@ -1,4 +1,4 @@
-function getIdeasOfPhilosopher(philosopher) {
+function getIdeasOfPhilosopher(state, philosopher) {
   return philosopher.ideas;
 }
 

@@ -1,4 +1,4 @@
-function getDeathEraOfPhilosopher(philosopher) {
+function getDeathEraOfPhilosopher(state, philosopher) {
   return philosopher.death.era;
 }
 

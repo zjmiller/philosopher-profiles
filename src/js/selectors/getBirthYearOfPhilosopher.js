@@ -1,4 +1,4 @@
-function getBirthYearOfPhilosopher(philosopher) {
+function getBirthYearOfPhilosopher(state, philosopher) {
   return philosopher.birth.year;
 }
 

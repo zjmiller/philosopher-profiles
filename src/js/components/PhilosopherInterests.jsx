@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import getInterestsOfPhilosopher from '../selectors/getInterestsOfPhilosopher';
 import getNameOfInterest from '../selectors/getNameOfInterest';
 
-function PhilosopherInterests({ interests }) {
+function PhilosopherInterests({ getNameOfInterestBound, interests }) {
   return (
     <div>
       <span
@@ -17,7 +17,7 @@ function PhilosopherInterests({ interests }) {
       </span>
       <ul>
         {interests.map((interest, i) =>
-          <li key={i}>{getNameOfInterest(interest)}</li>
+          <li key={i}>{getNameOfInterestBound(interest)}</li>
         )}
       </ul>
     </div>
@@ -25,10 +25,12 @@ function PhilosopherInterests({ interests }) {
 }
 
 PhilosopherInterests.propTypes = {
+  getNameOfInterestBound: React.PropTypes.func,
   interests: React.PropTypes.array,
 };
 
 const mapStateToProps = (state, { philosopher }) => ({
+  getNameOfInterestBound: getNameOfInterest.bind(this, state),
   interests: getInterestsOfPhilosopher(state, philosopher),
 });
 
