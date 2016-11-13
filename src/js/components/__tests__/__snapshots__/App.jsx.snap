@@ -1,0 +1,437 @@
+exports[`test App renders correctly 1`] = `
+<div>
+  <div>
+    <nav
+      className="navbar navbar-default"
+      style={
+        Object {
+          "borderRadius": 0,
+        }
+      }>
+      <div
+        className="container">
+        <div
+          className="navbar-header">
+          <a
+            className="navbar-brand"
+            href="/"
+            style={
+              Object {
+                "color": "#000",
+              }
+            }>
+            Philosopher Profiles
+          </a>
+          <button
+            className="navbar-toggle collapsed"
+            onClick={[Function]}
+            type="button">
+            <span
+              className="sr-only">
+              Toggle navigation
+            </span>
+            <span
+              className="icon-bar" />
+            <span
+              className="icon-bar" />
+            <span
+              className="icon-bar" />
+          </button>
+        </div>
+        <div
+          aria-expanded={null}
+          className="navbar-collapse collapse">
+          <ul
+            className="nav navbar-nav"
+            role={null}>
+            <li>
+              <a
+                className=""
+                href="#/"
+                onClick={[Function]}
+                style={Object {}}>
+                <span
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "backgroundColor": "#eee",
+                      "borderRadius": "4px",
+                      "padding": "8px",
+                    }
+                  }>
+                  <span
+                    className="glyphicon glyphicon-th" />
+                   
+                  Grid View
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                className=""
+                href="#/"
+                onClick={[Function]}
+                style={Object {}}>
+                <span
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "padding": "8px",
+                    }
+                  }>
+                  <span
+                    className="glyphicon glyphicon-th-list" />
+                   
+                  List View
+                </span>
+              </a>
+            </li>
+            <li
+              className="dropdown"
+              style={undefined}>
+              <a
+                aria-expanded={false}
+                aria-haspopup={true}
+                className="dropdown-toggle"
+                href="#"
+                id="basic-nav-dropdown"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button">
+                Filter By
+                 
+                <span
+                  className="caret" />
+              </a>
+              <ul
+                aria-labelledby="basic-nav-dropdown"
+                className="dropdown-menu"
+                role="menu">
+                <div
+                  active={undefined}
+                  onKeyDown={[Function]}
+                  onSelect={[Function]}
+                  style={
+                    Object {
+                      "minWidth": "300px",
+                      "padding": "10px",
+                    }
+                  }>
+                  <label
+                    className="control-label"
+                    htmlFor={undefined}>
+                    By Interest
+                  </label>
+                  <div
+                    className="form-group">
+                    <div
+                      className="checkbox"
+                      style={undefined}>
+                      <label>
+                        <input
+                          checked={true}
+                          disabled={false}
+                          onChange={[Function]}
+                          type="checkbox" />
+                        All
+                      </label>
+                    </div>
+                    <div
+                      className="checkbox"
+                      style={undefined}>
+                      <label>
+                        <input
+                          checked={false}
+                          disabled={false}
+                          onChange={[Function]}
+                          type="checkbox" />
+                        Ethics
+                      </label>
+                    </div>
+                    <div
+                      className="checkbox"
+                      style={undefined}>
+                      <label>
+                        <input
+                          checked={false}
+                          disabled={false}
+                          onChange={[Function]}
+                          type="checkbox" />
+                        Epistemology
+                      </label>
+                    </div>
+                  </div>
+                  <label
+                    className="control-label"
+                    htmlFor={undefined}>
+                    By Category
+                  </label>
+                  <div
+                    className="form-group">
+                    <div
+                      className="checkbox"
+                      style={undefined}>
+                      <label>
+                        <input
+                          checked={false}
+                          disabled={false}
+                          onChange={[Function]}
+                          type="checkbox" />
+                        Female
+                      </label>
+                    </div>
+                    <div
+                      className="checkbox"
+                      style={undefined}>
+                      <label>
+                        <input
+                          checked={false}
+                          disabled={false}
+                          onChange={[Function]}
+                          type="checkbox" />
+                        Person of Color
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </ul>
+            </li>
+            <li
+              className="dropdown"
+              style={undefined}>
+              <a
+                aria-expanded={false}
+                aria-haspopup={true}
+                className="dropdown-toggle"
+                href="#"
+                id="basic-nav-dropdown"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="button">
+                Sort By
+                 
+                <span
+                  className="caret" />
+              </a>
+              <ul
+                aria-labelledby="basic-nav-dropdown"
+                className="dropdown-menu"
+                role="menu">
+                <li
+                  className=""
+                  role="presentation"
+                  style={undefined}>
+                  <a
+                    href="#"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="menuitem"
+                    tabIndex="-1">
+                    Last Name
+                  </a>
+                </li>
+                <li
+                  className=""
+                  role="presentation"
+                  style={undefined}>
+                  <a
+                    href="#"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="menuitem"
+                    tabIndex="-1">
+                    Year
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div>
+    
+    <div
+      className="container">
+      <div
+        className="row">
+        <div
+          className="col-lg-2 col-md-3 col-sm-4 col-xs-6"
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
+          <a
+            className=""
+            href="#/AdaLovelace"
+            onClick={[Function]}
+            style={
+              Object {
+                "textDecoration": "none",
+              }
+            }>
+            <div
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#111",
+                  "backgroundImage": "url(\"imgs/ada-lovelace.png\")",
+                  "backgroundPosition": "center center",
+                  "backgroundRepeat": "no-repeat",
+                  "backgroundSize": "contain",
+                  "borderRadius": "5px",
+                  "cursor": "pointer",
+                  "display": "flex",
+                  "flexDirection": "column-reverse",
+                  "height": "300px",
+                  "overflow": "hidden",
+                }
+              }>
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#fff",
+                    "border": "2px solid #000",
+                    "borderRadius": "4px",
+                    "color": "#000",
+                    "fontFamily": "Avenir",
+                    "fontSize": "18px",
+                    "fontWeight": "700",
+                    "marginBottom": "10px",
+                    "padding": "2px 6px",
+                    "textAlign": "center",
+                    "width": "80%",
+                  }
+                }>
+                <span>
+                  Ada
+                   
+                  Lovelace
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div
+          className="col-lg-2 col-md-3 col-sm-4 col-xs-6"
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
+          <a
+            className=""
+            href="#/EthicsSocrates"
+            onClick={[Function]}
+            style={
+              Object {
+                "textDecoration": "none",
+              }
+            }>
+            <div
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#111",
+                  "backgroundImage": "url(\"imgs/socrates.png\")",
+                  "backgroundPosition": "center center",
+                  "backgroundRepeat": "no-repeat",
+                  "backgroundSize": "contain",
+                  "borderRadius": "5px",
+                  "cursor": "pointer",
+                  "display": "flex",
+                  "flexDirection": "column-reverse",
+                  "height": "300px",
+                  "overflow": "hidden",
+                }
+              }>
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#fff",
+                    "border": "2px solid #000",
+                    "borderRadius": "4px",
+                    "color": "#000",
+                    "fontFamily": "Avenir",
+                    "fontSize": "18px",
+                    "fontWeight": "700",
+                    "marginBottom": "10px",
+                    "padding": "2px 6px",
+                    "textAlign": "center",
+                    "width": "80%",
+                  }
+                }>
+                <span>
+                  Ethics
+                   
+                  Socrates
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div
+          className="col-lg-2 col-md-3 col-sm-4 col-xs-6"
+          style={
+            Object {
+              "padding": "5px",
+            }
+          }>
+          <a
+            className=""
+            href="#/EpisSocrates"
+            onClick={[Function]}
+            style={
+              Object {
+                "textDecoration": "none",
+              }
+            }>
+            <div
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#111",
+                  "backgroundImage": "url(\"imgs/socrates.png\")",
+                  "backgroundPosition": "center center",
+                  "backgroundRepeat": "no-repeat",
+                  "backgroundSize": "contain",
+                  "borderRadius": "5px",
+                  "cursor": "pointer",
+                  "display": "flex",
+                  "flexDirection": "column-reverse",
+                  "height": "300px",
+                  "overflow": "hidden",
+                }
+              }>
+              <div
+                style={
+                  Object {
+                    "backgroundColor": "#fff",
+                    "border": "2px solid #000",
+                    "borderRadius": "4px",
+                    "color": "#000",
+                    "fontFamily": "Avenir",
+                    "fontSize": "18px",
+                    "fontWeight": "700",
+                    "marginBottom": "10px",
+                    "padding": "2px 6px",
+                    "textAlign": "center",
+                    "width": "80%",
+                  }
+                }>
+                <span>
+                  Epis
+                   
+                  Socrates
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

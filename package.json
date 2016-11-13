@@ -30,6 +30,7 @@
     "flow-bin": "^0.34.0",
     "html-webpack-plugin": "^2.24.1",
     "jest": "^17.0.0",
+    "js-yaml": "^3.7.0",
     "react-test-renderer": "^15.3.2",
     "webpack": "^1.13.3"
   },
