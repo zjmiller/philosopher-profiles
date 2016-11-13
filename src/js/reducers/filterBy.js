@@ -1,6 +1,6 @@
 const initialState = {
-  gender: [],
   interests: [],
+  other: [],
 };
 
 export default function (state = initialState, action) {

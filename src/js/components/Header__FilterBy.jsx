@@ -7,9 +7,8 @@ import {
 } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
-import getGenderFilterInfo from '../selectors/getGenderFilterInfo';
+import getFilterBy from '../selectors/getFilterBy';
 import getInterests from '../selectors/getInterests';
-import getInterestsFilterInfo from '../selectors/getInterestsFilterInfo';
 import getIdOfInterest from '../selectors/getIdOfInterest';
 import getNameOfInterest from '../selectors/getNameOfInterest';
 
@@ -19,13 +18,13 @@ class Header__FilterBy extends Component {
     if (filter === 'all') {
       this.props.toggleAllOnFilter(category);
     } else if (category === 'interests') {
-      if (this.props.interestsFilterInfo.indexOf(filter) > -1) {
+      if (this.props.filterBy.interests.indexOf(filter) > -1) {
         this.props.removeFilter(category, filter);
       } else {
         this.props.addFilter(category, filter);
       }
-    } else if (category === 'gender') {
-      if (this.props.genderFilterInfo.indexOf(filter) > -1) {
+    } else if (category === 'other') {
+      if (this.props.filterBy.other.indexOf(filter) > -1) {
         this.props.removeFilter(category, filter);
       } else {
         this.props.addFilter(category, filter);
@@ -40,7 +39,7 @@ class Header__FilterBy extends Component {
         key={i}
         onChange={() => this.handleChange('interests', this.props.getIdOfInterestBound(interest))}
         checked={
-          this.props.interestsFilterInfo.indexOf(this.props.getIdOfInterestBound(interest)) > -1
+          this.props.filterBy.interests.indexOf(this.props.getIdOfInterestBound(interest)) > -1
         }
       >
         {this.props.getNameOfInterestBound(interest)}
@@ -51,7 +50,7 @@ class Header__FilterBy extends Component {
       <Checkbox
         key={'all'}
         onChange={() => this.handleChange('interests', 'all')}
-        checked={this.props.interestsFilterInfo.length === 0}
+        checked={this.props.filterBy.interests.length === 0}
       >
         All
       </Checkbox>
@@ -64,28 +63,21 @@ class Header__FilterBy extends Component {
           <FormGroup>
             { interestCheckboxes }
           </FormGroup>
-          <ControlLabel>By Gender</ControlLabel>
+          <ControlLabel>By Category</ControlLabel>
           <FormGroup>
             <Checkbox
-              key={'allGender'}
-              onChange={() => this.handleChange('gender', 'all')}
-              checked={this.props.genderFilterInfo.length === 0}
-            >
-              All
-            </Checkbox>
-            <Checkbox
               key={'female'}
-              onChange={() => this.handleChange('gender', 'Female')}
-              checked={this.props.genderFilterInfo.indexOf('Female') > -1}
+              onChange={() => this.handleChange('other', 'Female')}
+              checked={this.props.filterBy.other.indexOf('Female') > -1}
             >
               Female
             </Checkbox>
             <Checkbox
-              key={'male'}
-              onChange={() => this.handleChange('gender', 'Male')}
-              checked={this.props.genderFilterInfo.indexOf('Male') > -1}
+              key={'poc'}
+              onChange={() => this.handleChange('other', 'Person Of Color')}
+              checked={this.props.filterBy.other.indexOf('Person Of Color') > -1}
             >
-              Male
+              Person of Color
             </Checkbox>
           </FormGroup>
         </div>
@@ -96,21 +88,19 @@ class Header__FilterBy extends Component {
 
 Header__FilterBy.propTypes = {
   addFilter: React.PropTypes.func,
-  genderFilterInfo: React.PropTypes.array,
+  filterBy: React.PropTypes.object,
   getIdOfInterestBound: React.PropTypes.func,
   getNameOfInterestBound: React.PropTypes.func,
   interests: React.PropTypes.array,
-  interestsFilterInfo: React.PropTypes.array,
   removeFilter: React.PropTypes.func,
   toggleAllOnFilter: React.PropTypes.func,
 };
 
 const mapStateToProps = state => ({
+  filterBy: getFilterBy(state),
   getIdOfInterestBound: getIdOfInterest.bind(this, state),
   getNameOfInterestBound: getNameOfInterest.bind(this, state),
-  genderFilterInfo: getGenderFilterInfo(state),
   interests: getInterests(state),
-  interestsFilterInfo: getInterestsFilterInfo(state),
 });
 
 const mapDispatchToProps = dispatch => ({

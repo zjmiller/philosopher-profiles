@@ -14,7 +14,7 @@ function PhilosopherList({ filterBy, filteredAndSortedPhilosophers, view }) {
   return (
     <div>
       {
-        filterBy.gender.length > 0 || filterBy.interests.length > 0
+        filterBy.other.length > 0 || filterBy.interests.length > 0
         ?
           <Grid>
             <Row>

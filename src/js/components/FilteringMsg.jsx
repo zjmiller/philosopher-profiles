@@ -14,18 +14,18 @@ function FilteringMsg({ filterBy, getInterestByIdBound, getNameOfInterestBound }
     >
       Filtering by{' '}
       {
-        filterBy.gender.length > 0
+        filterBy.other.length > 0
         ?
-          <span>Gender{' '}
+          <span>Other{' '}
             <span style={{ color: '#955' }}>
-              ({filterBy.gender.join(', ')})
+              ({filterBy.other.join(', ')})
             </span>
           </span>
         :
         ''
       }
       {
-        filterBy.gender.length > 0 && filterBy.interests.length > 0
+        filterBy.other.length > 0 && filterBy.interests.length > 0
         ?
         ' and '
         :
