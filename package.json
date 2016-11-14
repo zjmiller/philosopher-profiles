@@ -4,7 +4,7 @@
   "description": "philosopher profiles for heather",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.dev.js",
+    "build": "webpack --config webpack.config.prod.js",
     "lint": "eslint --ext .js,.jsx src/js/* src/js/components/* src/js/selectors/*; exit 0",
     "start": "webpack-dev-server --content-base dest/",
     "test": "jest",
