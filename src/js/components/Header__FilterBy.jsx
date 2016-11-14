@@ -73,6 +73,13 @@ class Header__FilterBy extends Component {
               Female
             </Checkbox>
             <Checkbox
+              key={'lgbtq'}
+              onChange={() => this.handleChange('other', 'LGBTQ')}
+              checked={this.props.filterBy.other.indexOf('LGBTQ') > -1}
+            >
+              LGBTQ
+            </Checkbox>
+            <Checkbox
               key={'poc'}
               onChange={() => this.handleChange('other', 'Person Of Color')}
               checked={this.props.filterBy.other.indexOf('Person Of Color') > -1}

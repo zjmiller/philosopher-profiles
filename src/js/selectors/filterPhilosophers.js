@@ -23,6 +23,9 @@ function filterPhilosophers(philosophers, userFilterOpts) {
       if (other.indexOf('Person Of Color') > -1) {
         survivesFilter = survivesFilter && String(philosopher.poc) === 'true';
       }
+      if (other.indexOf('LGBTQ') > -1) {
+        survivesFilter = survivesFilter && String(philosopher.lgbtq) === 'true';
+      }
       return survivesFilter;
     })
     .filter((philosopher) => {
