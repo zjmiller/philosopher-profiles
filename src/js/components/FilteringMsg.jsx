@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 import getInterestById from '../selectors/getInterestById';
 import getNameOfInterest from '../selectors/getNameOfInterest';
 

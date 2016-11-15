@@ -1,6 +1,5 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
-
 import PhilosopherDegree from './PhilosopherDegree';
 import PhilosopherDescription from './PhilosopherDescription';
 import PhilosopherIdeas from './PhilosopherIdeas';
