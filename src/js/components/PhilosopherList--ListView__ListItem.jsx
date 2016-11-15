@@ -7,7 +7,7 @@ import PhilosopherTimeAlive from './PhilosopherTimeAlive';
 function ListItem({ philosopher }) {
   return (
     <Link
-      to={`/${philosopher.name.first}${philosopher.name.last}`}
+      to={`/philosophers/${philosopher.name.first}${philosopher.name.last}`}
       style={{
         color: '#333',
         textDecoration: 'none',

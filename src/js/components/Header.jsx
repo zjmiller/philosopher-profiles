@@ -1,6 +1,6 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
-
+import { Link } from 'react-router';
 import Header__FilterBy from './Header__FilterBy';
 import Header__GridViewBtn from './Header__GridViewBtn';
 import Header__ListViewBtn from './Header__ListViewBtn';
@@ -21,6 +21,7 @@ function Header() {
             <Header__ListViewBtn a={1} />
             <Header__FilterBy />
             <Header__SortBy />
+            <li><Link to="/submit">Submit Profile</Link></li>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

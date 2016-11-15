@@ -2,7 +2,6 @@ import React from 'react';
 import { Glyphicon } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-
 import getView from '../selectors/getView';
 
 function Header__GridViewBtn({ enableGridView, view }) {

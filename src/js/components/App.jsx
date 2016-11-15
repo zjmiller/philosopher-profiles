@@ -4,6 +4,7 @@ import { HashRouter, Match } from 'react-router';
 import Header from './Header';
 import PhilosopherList from './PhilosopherList';
 import Profile from './Profile';
+import SubmitProfile from './SubmitProfile';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <div>
         <Header />
         <Match exactly pattern="/" component={PhilosopherList} />
-        <Match pattern="/:name" component={Profile} />
+        <Match pattern="/philosophers/:name" component={Profile} />
+        <Match exactly pattern="/submit" component={SubmitProfile} />
       </div>
     </HashRouter>
   );
