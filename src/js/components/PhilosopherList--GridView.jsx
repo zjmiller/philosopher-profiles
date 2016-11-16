@@ -15,9 +15,9 @@ function PhilosopherListGridView({ philosophers }) {
             style={{ padding: '5px' }}
             key={i}
             lg={2}
-            md={3}
-            sm={4}
-            xs={6}
+            md={2}
+            sm={3}
+            xs={4}
           >
             <ProfileGridView
               philosopher={philosopher}

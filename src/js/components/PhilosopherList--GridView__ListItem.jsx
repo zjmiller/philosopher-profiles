@@ -1,6 +1,33 @@
+import { css, StyleSheet } from 'aphrodite';
 import React from 'react';
 import { Link } from 'react-router';
 import PhilosopherFullName from './PhilosopherFullName';
+
+const styles = StyleSheet.create({
+  basic: {
+    alignItems: 'center',
+    backgroundColor: 'rgb(242,242,242)',
+    backgroundImage: 'linear-gradient(to bottom,rgb(245,245,245) 0,rgb(230,230,230) 100%)',
+    border: '1px solid rgba(190,190,190,1)',
+    borderRadius: '5px',
+    boxShadow: '0 1px 2px 0 rgba(0,0,0,0.1), 0 4px 8px 0 rgba(0,0,0,0.2)',
+    cursor: 'pointer',
+    display: 'flex',
+    flexDirection: 'column',
+    height: '200px',
+    justifyContent: 'space-between',
+    opacity: 1,
+    overflow: 'hidden',
+    transform: 'scale(1, 1)',
+    transition: 'transform 0.2s',
+  },
+
+  hover: {
+    ':hover': {
+      transform: 'scale(1.02, 1.02)',
+    },
+  },
+});
 
 function ListItem({ philosopher }) {
   return (
@@ -11,33 +38,31 @@ function ListItem({ philosopher }) {
       }}
     >
       <div
-        style={{
-          alignItems: 'center',
-          backgroundColor: '#111',
-          backgroundImage: `url("imgs/${philosopher.img}")`,
-          backgroundPosition: 'center center',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'contain',
-          borderRadius: '5px',
-          cursor: 'pointer',
-          display: 'flex',
-          flexDirection: 'column-reverse',
-          height: '300px',
-          overflow: 'hidden',
-        }}
+        className={css(styles.basic, styles.hover)}
       >
         <div
           style={{
-            backgroundColor: '#fff',
-            border: '2px solid #000',
+            backgroundImage: `url("imgs/${philosopher.img}")`,
+            backgroundPosition: 'top center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            height: '150px',
+            marginTop: '10px',
+            overflow: 'hidden',
+            width: '90%',
+          }}
+        />
+        <div
+          style={{
             borderRadius: '4px',
-            color: '#000',
+            color: '#333',
             fontFamily: 'Avenir',
-            fontSize: '18px',
+            fontSize: '14px',
             fontWeight: '700',
-            marginBottom: '10px',
-            padding: '2px 6px',
+            marginBottom: '8px',
             textAlign: 'center',
+            textShadow: '0 1px 0 #fff',
+            whiteSpace: 'nowrap',
             width: '80%',
           }}
         >

@@ -14,7 +14,7 @@ exports[`test App renders correctly 1`] = `
           className="navbar-header">
           <a
             className="navbar-brand"
-            href="/"
+            href="./"
             style={
               Object {
                 "color": "#000",
@@ -62,7 +62,7 @@ exports[`test App renders correctly 1`] = `
                   <span
                     className="glyphicon glyphicon-th" />
                    
-                  Grid View
+                  Grid
                 </span>
               </a>
             </li>
@@ -82,7 +82,7 @@ exports[`test App renders correctly 1`] = `
                   <span
                     className="glyphicon glyphicon-th-list" />
                    
-                  List View
+                  List
                 </span>
               </a>
             </li>
@@ -98,7 +98,7 @@ exports[`test App renders correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="button">
-                Filter By
+                Filter
                  
                 <span
                   className="caret" />
@@ -189,6 +189,18 @@ exports[`test App renders correctly 1`] = `
                           disabled={false}
                           onChange={[Function]}
                           type="checkbox" />
+                        LGBTQ
+                      </label>
+                    </div>
+                    <div
+                      className="checkbox"
+                      style={undefined}>
+                      <label>
+                        <input
+                          checked={false}
+                          disabled={false}
+                          onChange={[Function]}
+                          type="checkbox" />
                         Person of Color
                       </label>
                     </div>
@@ -208,7 +220,7 @@ exports[`test App renders correctly 1`] = `
                 onClick={[Function]}
                 onKeyDown={[Function]}
                 role="button">
-                Sort By
+                Sort
                  
                 <span
                   className="caret" />
@@ -227,7 +239,15 @@ exports[`test App renders correctly 1`] = `
                     onKeyDown={[Function]}
                     role="menuitem"
                     tabIndex="-1">
-                    Last Name
+                    Last Name 
+                    <span
+                      style={
+                        Object {
+                          "fontVariant": "small-caps",
+                        }
+                      }>
+                      a-z
+                    </span>
                   </a>
                 </li>
                 <li
@@ -240,10 +260,57 @@ exports[`test App renders correctly 1`] = `
                     onKeyDown={[Function]}
                     role="menuitem"
                     tabIndex="-1">
-                    Year
+                    Last Name 
+                    <span
+                      style={
+                        Object {
+                          "fontVariant": "small-caps",
+                        }
+                      }>
+                      z-a
+                    </span>
+                  </a>
+                </li>
+                <li
+                  className=""
+                  role="presentation"
+                  style={undefined}>
+                  <a
+                    href="#"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="menuitem"
+                    tabIndex="-1">
+                    Oldest First
+                  </a>
+                </li>
+                <li
+                  className=""
+                  role="presentation"
+                  style={undefined}>
+                  <a
+                    href="#"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="menuitem"
+                    tabIndex="-1">
+                    Most Recent First
                   </a>
                 </li>
               </ul>
+            </li>
+            <li
+              active={undefined}
+              activeHref={undefined}
+              activeKey={undefined}
+              onSelect={[Function]}>
+              <a
+                className=""
+                href="#/submit"
+                onClick={[Function]}
+                style={Object {}}>
+                Submit Profile
+              </a>
             </li>
           </ul>
         </div>
@@ -257,7 +324,7 @@ exports[`test App renders correctly 1`] = `
       <div
         className="row">
         <div
-          className="col-lg-2 col-md-3 col-sm-4 col-xs-6"
+          className="col-lg-2 col-md-2 col-sm-3 col-xs-4"
           style={
             Object {
               "padding": "5px",
@@ -265,7 +332,7 @@ exports[`test App renders correctly 1`] = `
           }>
           <a
             className=""
-            href="#/AdaLovelace"
+            href="#/philosophers/AdaLovelace"
             onClick={[Function]}
             style={
               Object {
@@ -273,35 +340,32 @@ exports[`test App renders correctly 1`] = `
               }
             }>
             <div
-              style={
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#111",
-                  "backgroundImage": "url(\"imgs/ada-lovelace.png\")",
-                  "backgroundPosition": "center center",
-                  "backgroundRepeat": "no-repeat",
-                  "backgroundSize": "contain",
-                  "borderRadius": "5px",
-                  "cursor": "pointer",
-                  "display": "flex",
-                  "flexDirection": "column-reverse",
-                  "height": "300px",
-                  "overflow": "hidden",
-                }
-              }>
+              className="basic_15rmmu2-o_O-hover_1onh71y">
               <div
                 style={
                   Object {
-                    "backgroundColor": "#fff",
-                    "border": "2px solid #000",
+                    "backgroundImage": "url(\"imgs/ada-lovelace.png\")",
+                    "backgroundPosition": "top center",
+                    "backgroundRepeat": "no-repeat",
+                    "backgroundSize": "cover",
+                    "height": "150px",
+                    "marginTop": "10px",
+                    "overflow": "hidden",
+                    "width": "90%",
+                  }
+                } />
+              <div
+                style={
+                  Object {
                     "borderRadius": "4px",
-                    "color": "#000",
+                    "color": "#333",
                     "fontFamily": "Avenir",
-                    "fontSize": "18px",
+                    "fontSize": "14px",
                     "fontWeight": "700",
-                    "marginBottom": "10px",
-                    "padding": "2px 6px",
+                    "marginBottom": "8px",
                     "textAlign": "center",
+                    "textShadow": "0 1px 0 #fff",
+                    "whiteSpace": "nowrap",
                     "width": "80%",
                   }
                 }>
@@ -315,7 +379,7 @@ exports[`test App renders correctly 1`] = `
           </a>
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-4 col-xs-6"
+          className="col-lg-2 col-md-2 col-sm-3 col-xs-4"
           style={
             Object {
               "padding": "5px",
@@ -323,7 +387,7 @@ exports[`test App renders correctly 1`] = `
           }>
           <a
             className=""
-            href="#/EthicsSocrates"
+            href="#/philosophers/EthicsSocrates"
             onClick={[Function]}
             style={
               Object {
@@ -331,35 +395,32 @@ exports[`test App renders correctly 1`] = `
               }
             }>
             <div
-              style={
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#111",
-                  "backgroundImage": "url(\"imgs/socrates.png\")",
-                  "backgroundPosition": "center center",
-                  "backgroundRepeat": "no-repeat",
-                  "backgroundSize": "contain",
-                  "borderRadius": "5px",
-                  "cursor": "pointer",
-                  "display": "flex",
-                  "flexDirection": "column-reverse",
-                  "height": "300px",
-                  "overflow": "hidden",
-                }
-              }>
+              className="basic_15rmmu2-o_O-hover_1onh71y">
               <div
                 style={
                   Object {
-                    "backgroundColor": "#fff",
-                    "border": "2px solid #000",
+                    "backgroundImage": "url(\"imgs/socrates.png\")",
+                    "backgroundPosition": "top center",
+                    "backgroundRepeat": "no-repeat",
+                    "backgroundSize": "cover",
+                    "height": "150px",
+                    "marginTop": "10px",
+                    "overflow": "hidden",
+                    "width": "90%",
+                  }
+                } />
+              <div
+                style={
+                  Object {
                     "borderRadius": "4px",
-                    "color": "#000",
+                    "color": "#333",
                     "fontFamily": "Avenir",
-                    "fontSize": "18px",
+                    "fontSize": "14px",
                     "fontWeight": "700",
-                    "marginBottom": "10px",
-                    "padding": "2px 6px",
+                    "marginBottom": "8px",
                     "textAlign": "center",
+                    "textShadow": "0 1px 0 #fff",
+                    "whiteSpace": "nowrap",
                     "width": "80%",
                   }
                 }>
@@ -373,7 +434,7 @@ exports[`test App renders correctly 1`] = `
           </a>
         </div>
         <div
-          className="col-lg-2 col-md-3 col-sm-4 col-xs-6"
+          className="col-lg-2 col-md-2 col-sm-3 col-xs-4"
           style={
             Object {
               "padding": "5px",
@@ -381,7 +442,7 @@ exports[`test App renders correctly 1`] = `
           }>
           <a
             className=""
-            href="#/EpisSocrates"
+            href="#/philosophers/EpisSocrates"
             onClick={[Function]}
             style={
               Object {
@@ -389,35 +450,32 @@ exports[`test App renders correctly 1`] = `
               }
             }>
             <div
-              style={
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#111",
-                  "backgroundImage": "url(\"imgs/socrates.png\")",
-                  "backgroundPosition": "center center",
-                  "backgroundRepeat": "no-repeat",
-                  "backgroundSize": "contain",
-                  "borderRadius": "5px",
-                  "cursor": "pointer",
-                  "display": "flex",
-                  "flexDirection": "column-reverse",
-                  "height": "300px",
-                  "overflow": "hidden",
-                }
-              }>
+              className="basic_15rmmu2-o_O-hover_1onh71y">
               <div
                 style={
                   Object {
-                    "backgroundColor": "#fff",
-                    "border": "2px solid #000",
+                    "backgroundImage": "url(\"imgs/socrates.png\")",
+                    "backgroundPosition": "top center",
+                    "backgroundRepeat": "no-repeat",
+                    "backgroundSize": "cover",
+                    "height": "150px",
+                    "marginTop": "10px",
+                    "overflow": "hidden",
+                    "width": "90%",
+                  }
+                } />
+              <div
+                style={
+                  Object {
                     "borderRadius": "4px",
-                    "color": "#000",
+                    "color": "#333",
                     "fontFamily": "Avenir",
-                    "fontSize": "18px",
+                    "fontSize": "14px",
                     "fontWeight": "700",
-                    "marginBottom": "10px",
-                    "padding": "2px 6px",
+                    "marginBottom": "8px",
                     "textAlign": "center",
+                    "textShadow": "0 1px 0 #fff",
+                    "whiteSpace": "nowrap",
                     "width": "80%",
                   }
                 }>

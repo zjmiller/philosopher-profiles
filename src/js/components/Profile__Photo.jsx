@@ -12,7 +12,6 @@ function Profile__Photo({ philosopher }) {
         backgroundImage: `url("imgs/${philosopher.img}")`,
         backgroundPosition: 'center top',
         backgroundSize: 'cover',
-        border: '5px solid #222',
         height: '300px',
         marginBottom: '20px',
       }}
