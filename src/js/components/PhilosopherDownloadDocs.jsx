@@ -6,9 +6,9 @@ import { connect } from 'react-redux';
 import getPdfFileNameOfPhilosopher from '../selectors/getPdfFileNameOfPhilosopher';
 import getWordFileNameOfPhilosopher from '../selectors/getWordFileNameOfPhilosopher';
 
-function PhilosopherDownloadDocs({ pdfFileName, wordFileName }) {
+function PhilosopherDownloadDocs({ pdfFileName, style, wordFileName }) {
   return (
-    <span>
+    <span style={Object.assign({}, style, { whiteSpace: 'nowrap' })}>
       {pdfFileName &&
         <a
           href={`./docs/${pdfFileName}`}
@@ -42,6 +42,7 @@ function PhilosopherDownloadDocs({ pdfFileName, wordFileName }) {
 
 PhilosopherDownloadDocs.propTypes = {
   pdfFileName: React.PropTypes.string,
+  style: React.PropTypes.object,
   wordFileName: React.PropTypes.string,
 };
 

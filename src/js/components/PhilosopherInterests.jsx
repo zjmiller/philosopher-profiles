@@ -17,7 +17,9 @@ function PhilosopherInterests({ interests }) {
       </span>
       <ul>
         {interests.map((interest, i) =>
-          <InterestName key={i} interest={interest} />
+          <li key={i}>
+            <InterestName interest={interest} />
+          </li>
         )}
       </ul>
     </div>

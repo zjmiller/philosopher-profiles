@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 function Header__SortBy({ changeSortBy }) {
   return (
-    <NavDropdown eventKey={3} title="Sort By" id="basic-nav-dropdown">
+    <NavDropdown eventKey={3} title="Sort" id="basic-nav-dropdown">
       <MenuItem
         eventKey={3.1}
         onClick={() => changeSortBy('LAST_NAME_ASC')}

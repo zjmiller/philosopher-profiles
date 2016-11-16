@@ -24,7 +24,7 @@ function Header__GridViewBtn({ enableGridView, view }) {
         >
           <Glyphicon glyph="th" />
           {' '}
-          Grid View
+          Grid
         </span>
       </Link>
     </li>

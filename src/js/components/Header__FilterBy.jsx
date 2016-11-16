@@ -57,7 +57,7 @@ class Header__FilterBy extends Component {
     );
 
     return (
-      <NavDropdown eventKey={4} title="Filter By" id="basic-nav-dropdown">
+      <NavDropdown eventKey={4} title="Filter" id="basic-nav-dropdown">
         <div style={{ padding: '10px', minWidth: '300px' }}>
           <ControlLabel>By Interest</ControlLabel>
           <FormGroup>

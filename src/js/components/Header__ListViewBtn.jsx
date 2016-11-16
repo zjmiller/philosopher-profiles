@@ -23,7 +23,7 @@ function Header__ListViewBtn({ enableListView, view }) {
         >
           <Glyphicon glyph="th-list" />
           {' '}
-          List View
+          List
         </span>
       </Link>
     </li>
